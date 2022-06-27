@@ -1,0 +1,19 @@
+.cabecalho {
+    background-color: brown; /*apenas para visualização apagar depois*/
+    height: 50px;
+
+}
+
+.cabecalho__menu{
+    height: 80%;
+    background-color: aqua; /*apenas para visualização apagar depois*/
+}
+
+.cabecalho__lista {
+    display: flex;
+    justify-content: space-around;
+    background-color: bisque;
+    border: 2px black solid;
+    height: 70%;
+    
+}
