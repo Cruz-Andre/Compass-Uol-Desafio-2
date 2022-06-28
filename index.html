@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/reset.css">
     <link rel="stylesheet" href="estilos/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Tintas Pinta</title>
 </head>
 <body>
     <header class="cabecalho">
         <nav class="cabecalho__menu">
+            <input type="checkbox" id="menu" class="cabecalho__botao">
+                <label for="menu" class="cabecalho__label">
+                    <span class="cabecalho__menu-haburguer"></span>
+                </label>
             <ul class="cabecalho__lista">
-                <li class="cabecalho__item">Home</li>
-                <li class="cabecalho__item">Calculadora</li>
-                <li class="cabecalho__item">Contato</li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="#">Home</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="#">Calculadora de Tinta</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="#">Contato</a></li>
             </ul>
+            <h1 class="cabecalho__menu-titulo">Tintas Pinta</h1>
+            <a href="#"><img src="img/carrinho.svg" alt="carrinho de compras" class="cabecalho__carrinho"></a>
         </nav>
     </header>
 

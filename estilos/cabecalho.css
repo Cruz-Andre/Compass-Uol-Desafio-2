@@ -1,0 +1,131 @@
+.cabecalho {
+    position: relative;
+    background-color: var(--cor-de-fundo);
+    border-bottom: 2px solid var(--preto);
+}
+
+
+.cabecalho__menu{
+    display: flex;
+    align-items: center;
+}
+
+
+.cabecalho__botao {
+    display: none;
+}
+
+
+.cabecalho__botao:checked ~ .cabecalho__label > .cabecalho__menu-haburguer {
+    background-image: url(../img/MenuAberto.svg);
+}
+
+
+.cabecalho__label {
+    padding: 1rem;
+}
+
+
+.cabecalho__menu-haburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/menuFechado.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+
+.cabecalho__lista {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    transition: 0.5s;
+    left: -100%;
+    width: 100%;
+}
+
+
+.cabecalho__botao:checked ~ .cabecalho__lista {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    transition: 0.25s;
+    left: 0;
+    justify-content: space-around;
+    background-color: var(--cor-de-fundo);
+}
+
+
+.cabecalho__item {
+    margin: 10px 10px;
+}
+
+
+.cabecalho__item-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--preto);
+}
+
+
+.cabecalho__menu-titulo {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+.cabecalho__carrinho {
+    padding: 1rem;
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (min-width: 720px) {
+    
+    .cabecalho__menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .cabecalho__botao {
+        order: -1;
+    }
+
+    
+    .cabecalho__label {
+        display: none;
+    }
+    
+    
+    .cabecalho__lista {
+        position: inherit;
+        width: auto;
+    }
+
+
+    .cabecalho__botao:checked ~ .cabecalho__lista {
+        position: inherit;
+    }
+    
+    
+    .cabecalho__item-link {
+        font-size: 2rem;
+    }
+    
+    
+    .cabecalho__menu-titulo {
+        margin: 10px 10px;
+        width: auto;
+        order: -1;
+    }
+    
+    
+    .cabecalho__carrinho {
+        padding: 0;
+        margin: 10px 10px;
+    }
+    
+}

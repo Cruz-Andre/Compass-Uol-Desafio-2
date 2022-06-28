@@ -1,19 +1,24 @@
-.cabecalho {
-    background-color: brown; /*apenas para visualização apagar depois*/
-    height: 50px;
+@import url("cabecalho.css"); /* Separando os estilos por setor da página */
 
+/* Variáveis para cor e fonte */
+:root {
+    --fonte-principal: 'Bebas Neue';
+    --fonte-secundaria: sans-serif;
+    --cor-de-fundo: rgb(196, 193, 215);
+    --branco: #FFFFFF;
+    --preto: rgba(0, 0, 0, 0.95);
+    --laranja: #EB9B00;
+    --azul-degrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    --azul: #002F52;
+    --cor-rodape: #F9F9F9;
+    --fonte-secundaria: sans-serif;
+    --pretoo: #000000;
+    --cinza-claro: #858585;
 }
 
-.cabecalho__menu{
-    height: 80%;
-    background-color: aqua; /*apenas para visualização apagar depois*/
-}
-
-.cabecalho__lista {
-    display: flex;
-    justify-content: space-around;
-    background-color: bisque;
-    border: 2px black solid;
-    height: 70%;
-    
+/* Medida padrao paizao de todos */
+html, body {
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
 }
