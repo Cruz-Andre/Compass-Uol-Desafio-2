@@ -15,8 +15,10 @@
     display: none;
 }
 
-
-.cabecalho__botao:checked ~ .cabecalho__label > .cabecalho__menu-haburguer {
+/*  ~ combinador (irmão geral) OU + combinador (irmão próximo) para
+mudar a imagem do menu quando for clicado. Usa o combinador filho para
+selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
+.cabecalho__botao:checked ~ .cabecalho__label > .cabecalho__menu-hamburguer {
     background-image: url(../img/MenuAberto.svg);
 }
 
@@ -26,7 +28,7 @@
 }
 
 
-.cabecalho__menu-haburguer {
+.cabecalho__menu-hamburguer {
     width: 24px;
     height: 24px;
     background-image: url("../img/menuFechado.png");
@@ -37,7 +39,7 @@
 
 
 .cabecalho__lista {
-    display: flex;
+    display: flex; 
     position: absolute;
     top: 100%;
     transition: 0.5s;
@@ -45,14 +47,16 @@
     width: 100%;
 }
 
-
+/*  ~ combinador (irmão geral) OU + combinador (irmão próximo) para abrir o menu */
 .cabecalho__botao:checked ~ .cabecalho__lista {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
     position: absolute;
     top: 100%;
     transition: 0.25s;
     left: 0;
-    justify-content: space-around;
     background-color: var(--cor-de-fundo);
 }
 
@@ -60,7 +64,6 @@
 .cabecalho__item {
     margin: 10px 10px;
 }
-
 
 .cabecalho__item-link {
     font-size: 1.5rem;
@@ -82,10 +85,10 @@
     height: 24px;
 }
 
+/* Para telas maiores que 720px */
 @media screen and (min-width: 720px) {
     
     .cabecalho__menu {
-        display: flex;
         justify-content: space-around;
         align-items: center;
     }
@@ -105,10 +108,17 @@
         width: auto;
     }
 
-
+/* evita o movimento de transition quando girar um celular ou tablet com a largura maior que 720px */
     .cabecalho__botao:checked ~ .cabecalho__lista {
         position: inherit;
     }
+
+    .cabecalho__item-link:hover {
+        background: var(--cor-de-fundo2);
+        padding: 0.5rem;
+        border-radius: 5px;
+        
+    }    
     
     
     .cabecalho__item-link {

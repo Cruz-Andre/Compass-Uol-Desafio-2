@@ -1,0 +1,23 @@
+.carrossel {
+    position: relative;
+    top: 66px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+.carrossel__borda {
+    border-radius: 15px;
+}
+    
+
+.carrossel__imagem {
+    object-fit: fill;
+    height: 400px;
+}
+
+
+.carrossel-texto {
+    margin-top: 1rem;
+    color: var(--preto)
+}

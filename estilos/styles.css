@@ -1,19 +1,22 @@
 @import url("cabecalho.css"); /* Separando os estilos por setor da página */
+@import url("carrossel.css");
 
 /* Variáveis para cor e fonte */
 :root {
     --fonte-principal: 'Bebas Neue';
     --fonte-secundaria: sans-serif;
     --cor-de-fundo: rgb(196, 193, 215);
+    --cor-de-fundo2: rgb(174, 168, 214);
     --branco: #FFFFFF;
     --preto: rgba(0, 0, 0, 0.95);
     --laranja: #EB9B00;
     --azul-degrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
     --azul: #002F52;
-    --cor-rodape: #F9F9F9;
-    --fonte-secundaria: sans-serif;
-    --pretoo: #000000;
     --cinza-claro: #858585;
+    /* sobrescrevendo o bootstrap */
+    --bs-link-color: none;
+    --bs-link-hover-color: none;
+    --bs-body-color: none;
 }
 
 /* Medida padrao paizao de todos */
