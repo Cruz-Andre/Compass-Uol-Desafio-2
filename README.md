@@ -1,6 +1,8 @@
 ## Compass-Uol-Desafio-2
 #### Uma aplicação web ou mobile que ajude o usuário a calcular a quantidade de tinta necessária para pintar uma sala.
 
+GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
+
 #### To-Do:
 1. Um cabeçalho padrão de navegação em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 2. Um rodapé padrão em todas as páginas. ![0% parado](https://progress-bar.dev/0/?title=parado)
