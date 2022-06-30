@@ -1,0 +1,8 @@
+.secaoDois {
+    display: flex;
+    flex-direction: column;
+}
+
+.secaoDois__img-item {
+    width: 90%;
+}

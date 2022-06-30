@@ -2,6 +2,7 @@
     position: relative;
     background-color: var(--cor-de-fundo);
     border-bottom: 2px solid var(--preto);
+    font-family: var(--fonte-secundaria);
 }
 
 
@@ -85,8 +86,8 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
     height: 24px;
 }
 
-/* Para telas maiores que 720px */
-@media screen and (min-width: 720px) {
+/* Para telas maiores que 763px */
+@media screen and (min-width: 763px) {
     
     .cabecalho__menu {
         justify-content: space-around;
@@ -108,16 +109,15 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
         width: auto;
     }
 
-/* evita o movimento de transition quando girar um celular ou tablet com a largura maior que 720px */
+/* evita o movimento de transition quando girar um celular ou tablet com a largura maior que 763px */
     .cabecalho__botao:checked ~ .cabecalho__lista {
         position: inherit;
     }
 
     .cabecalho__item-link:hover {
         background: var(--cor-de-fundo2);
-        padding: 0.5rem;
-        border-radius: 5px;
-        
+        padding: 0  0.5rem;
+        border-radius: 5px; 
     }    
     
     
@@ -125,7 +125,12 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
         font-size: 2rem;
     }
     
+
+    .cabecalho__item-link-ativo {
+        border-bottom: 2px solid;
+    }
     
+
     .cabecalho__menu-titulo {
         margin: 10px 10px;
         width: auto;

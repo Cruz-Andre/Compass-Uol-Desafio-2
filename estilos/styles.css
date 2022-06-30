@@ -2,13 +2,14 @@
 @import url("carrossel.css");
 @import url("calculadora.css");
 @import url("contato.css");
+@import url("secaodois.css");
 
-/* Variáveis para cor e fonte */
+/* Variáveis para cor e fonte secundária*/
 :root {
-    --fonte-principal: 'Bebas Neue';
-    --fonte-secundaria: sans-serif;
+    --fonte-secundaria: 'Bebas Neue';
     --cor-de-fundo: rgb(196, 193, 215);
     --cor-de-fundo2: rgb(174, 168, 214);
+    --cor-de-fundo-transparente: rgba(196, 193, 215, 0.5);
     --branco: #FFFFFF;
     --preto: rgba(0, 0, 0, 0.95);
     --laranja: #EB9B00;
@@ -22,8 +23,20 @@
 }
 
 /* Medida padrao paizao de todos */
-html, body {
-    font-family: var(--fonte-principal);
+
+body {
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 400;    
+}
+
+/* Deslocar o main para a linha seguinte ao fim do cabeçalho */
+main {
+    position: relative;
+    top: 66px;
+}
+
+footer {
+    position: relative;
+    top: 66px;
 }

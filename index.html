@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/styles.css">
     <title>Tintas Pinta</title>
 </head>
@@ -18,10 +19,10 @@
                     <span class="cabecalho__menu-hamburguer"></span>
                 </label>
             <ul class="cabecalho__lista">
-                <li class="cabecalho__item"><a class="cabecalho__item-link" href="index.html">Home</a></li>
-                <li class="cabecalho__item"><a class="cabecalho__item-link" href="#">Compre</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link cabecalho__item-link-ativo" href="index.html">Home</a></li>
                 <li class="cabecalho__item"><a class="cabecalho__item-link" href="calculadora.html">Calculadora de Tinta</a></li>
                 <li class="cabecalho__item"><a class="cabecalho__item-link" href="contato.html">Contato</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="#">Compre</a></li>
             </ul>
             <h1 class="cabecalho__menu-titulo">Tintas Pinta</h1>
             <a href="#" class="cabecalho__"><img src="img/carrinho.svg" title="Carrinho de Compras" alt="carrinho de compras" class="cabecalho__carrinho"></a>
@@ -29,7 +30,7 @@
     </header>
     <main>
         <section class="carrossel">
-            <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="false">
+            <div id="carouselExampleIndicators" class="carousel carousel-fade carousel-dark slide" data-bs-ride="false">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -38,18 +39,24 @@
                 <div class="carousel-inner carrossel__borda">
                     <div class="carousel-item active">
                         <img src="img/10-02.jpg" class="d-block w-100 carrossel__imagem" alt="Link imagem para Calculadora de Tinta">
-                        <div class="carousel-caption d-none d-md-block h-100">
+                        <div class="carousel-caption">
 							<h1 class="display-1 carrossel-texto">Calculadora de Tintas</h1>
-						</div>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="img/construção.webp" class="d-block w-100 carrossel__imagem" alt="Em construção"></a>
-                        <div class="carousel-caption d-none d-md-block h-100">
-							<h1 class="display-1 carrossel-texto">Seção em Construção</h1>
+                            <a href="calculadora.html" class="btn carrossel__botao">Clique Aqui!</a>
 						</div>
                     </div>
                     <div class="carousel-item">
                         <img src="img/forms.webp" class="d-block w-100 carrossel__imagem" alt="...">
+                        <div class="carousel-caption">
+							<h1 class="display-1 carrossel-texto">Formulário de Contato</h1>
+                            <a href="contato.html" class="btn carrossel__botao">Clique Aqui!</a>
+						</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/construção.webp" class="d-block w-100 carrossel__imagem" alt="Em construção">
+                        <div class="carousel-caption">
+							<h1 class="display-1 carrossel-texto">Seção em Construção</h1>
+                            <a href="#" class="btn carrossel__botao disabled" aria-disabled="true">Clique Aqui!</a>
+						</div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -63,13 +70,25 @@
             </div>
         </section>
 
+        <section class="secaoDois">
+            <article class="secaoDois__textos">
+                <h1>Sobre a Tintas Pinta</h1>
+                <p>Futura loja online para compra de materias de construção</p>
+                <p>Oferecemos de imediato uma página exclusiva para calcular o quanto de tinta você precisa para pintar uma parede</p>
+                <p>Clique no link para saber mais</p>
+            </article>
+            <figure class="secaoDois__imgs">
+                <img class="secaoDois__img-item" src="img/tintas.png" alt="vários baldes de tinta perfeitamente organizados">
+            </figure>
+        </section>
+
         
 
 
     </main>
 
     <footer>
-
+        <p>rodapéééééééé</p>
     </footer>
     
     
