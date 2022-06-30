@@ -6,7 +6,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 #### To-Do:
 1. Um cabeçalho padrão de navegação em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 2. Um rodapé padrão em todas as páginas. ![0% parado](https://progress-bar.dev/0/?title=parado)
-3. Na página inicial: uma apresentação dos conteúdos das páginas. ![50% construindo](https://progress-bar.dev/50/?title=construindo)
+3. Na página inicial: uma apresentação dos conteúdos das páginas. ![45% construindo](https://progress-bar.dev/45/?title=construindo)
 4. Na 2ª página: calculadora de tintas ![5% parado](https://progress-bar.dev/5/?title=parado)
 6. Na 3ª página: Formulário para contato. ![2% parado](https://progress-bar.dev/2/?title=parado)
 
@@ -32,6 +32,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 - ~~a definir a outra section abaixo do carrossel.~~
 - ajustar o design da seção 2 (abaixo do carrossel).
 - definir um plano de fundo padrão para o site.
+- mudar as fotos do carrossel.
 - ...
 <br>
 
