@@ -34,6 +34,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 - definir um plano de fundo padrão para o site.
 - mudar as fotos do carrossel.
 - talves inverter a posição do carrossel com a seção 2.
+- ajustar a resposividade para telas maiores.
 - ...
 <br>
 
