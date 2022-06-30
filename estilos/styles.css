@@ -1,5 +1,7 @@
 @import url("cabecalho.css"); /* Separando os estilos por setor da página */
 @import url("carrossel.css");
+@import url("calculadora.css");
+@import url("contato.css");
 
 /* Variáveis para cor e fonte */
 :root {

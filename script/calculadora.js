@@ -29,8 +29,6 @@
  *      o 18 L
  */
 
-
-
 /**
  * matemática daqui para baixo
  */
