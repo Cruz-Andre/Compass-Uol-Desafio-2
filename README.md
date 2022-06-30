@@ -8,7 +8,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 2. Um rodapé padrão em todas as páginas. ![0% parado](https://progress-bar.dev/0/?title=parado)
 3. Na página inicial: uma apresentação dos conteúdos das páginas. ![10% construindo](https://progress-bar.dev/10/?title=construindo)
 4. Na 2ª página: calculadora de tintas ![5% parado](https://progress-bar.dev/5/?title=parado)
-6. Na 3ª página: Formulário para contato. ![1% parado](https://progress-bar.dev/1/?title=parado)
+6. Na 3ª página: Formulário para contato. ![2% parado](https://progress-bar.dev/2/?title=parado)
 
 <br>
 
