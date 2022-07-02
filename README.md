@@ -8,7 +8,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 2. Um rodapé padrão em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 3. Na página inicial: uma apresentação dos conteúdos das páginas. ![99% quase](https://progress-bar.dev/99/?title=quase)
 4. Na 2ª página: calculadora de tintas ![10% parado](https://progress-bar.dev/10/?title=parado)
-5. Na 3ª página: Formulário para contato. ![50% parado](https://progress-bar.dev/50/?title=parado)
+5. Na 3ª página: Formulário para contato. ![50% construindo](https://progress-bar.dev/50/?title=contruindo)
 
 <br>
 
@@ -49,8 +49,8 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 - ...
 
 5. Na 3ª página: Formulário para contato.
-- Campos de nome e sobrenome ou nome completo com required
-- Campo de endereço de e-mail com validação e regex
-- Campo de telefone com ddd com validação e regex
-- Campo de data de nascimento ou idade com validação e regex
+- Campos de nome e sobrenome ou nome completo com required e validação regex somente caracteres alfabeticos
+- Campo de endereço de e-mail com validação regex
+- Campo de telefone com ddd com validação regex
+- Campo de data de nascimento ou idade com validação regex
 - ...
