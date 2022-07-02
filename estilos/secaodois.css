@@ -1,7 +1,7 @@
 .secaoDois {
     display: flex;
     flex-direction: column;
-    background-image: url("/img/fundo2.jpg");
+    background-image: url("../img/fundo2.jpg");
     background-position: center;
 }
 
