@@ -1,0 +1,22 @@
+.rodape {
+    background-color: var(--cor-de-fundo);
+    border-top: 2px solid var(--preto);
+    font-family: var(--fonte-secundaria);
+    height: 84px;
+}
+
+.rodape__caixa {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.rodape__texto {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.rodape__icones {
+    width: 32px;
+    height: 32px;
+}

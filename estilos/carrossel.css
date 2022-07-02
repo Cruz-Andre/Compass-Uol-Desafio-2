@@ -1,34 +1,41 @@
-.carrossel {
+.carrossel__tela {
     margin: 0 auto;
-    width: 324px;
+    width: 90%;
 }
 
 
 .carrossel__borda {
     border-radius: 15px;
+    /* x, y, blur, alcance da sobra e color. */
+    box-shadow: 10px 10px 20px 0 var(--cor-de-fundo2);
 }
-    
 
-.carrossel__imagem {
-    object-fit: fill;
-    height: 324px;
+
+.carrossel__caixa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
 }
 
 
 .carrossel-texto {
-    position: absolute;
-    top: -220px;
-    margin-top: 1rem;
+    align-self: auto;
+    border-radius: 15px;
+    margin: 0 1rem;
     color: var(--preto);
     background: var(--cor-de-fundo-transparente);
-    border-radius: 15px;
     font-family: var(--fonte-secundaria);
-    font-size: 2.5rem;
-
 }
 
-/* Usando as propriedades do bootstrap diretamente */
+
 .carrossel__botao {
+    align-self: center;
+}
+
+
+/* Usando as propriedades do bootstrap diretamente */
+.carrossel__botao {    
     --bs-btn-color: var(--preto);
     --bs-btn-bg: var(--cor-de-fundo);
     --bs-btn-border-color: var(--cor-de-fundo2);
@@ -46,10 +53,11 @@
     font-weight: 500;
 } 
 
+
 /* Para telas maiores que 720px */
 @media screen and (min-width: 720px) {
-    .carrossel {
-        width: 50%;
-        border: 1px solid;
-    }
+    .carrossel__imagem {
+        object-fit: fill;
+        height: 576px;     
+    } 
 }
