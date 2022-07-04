@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="script/jquery.mask.min.js"></script>	 
     <link rel="stylesheet" href="estilos/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/styles.css">
-    <title>Tintas Pinta</title>
+    <title>Contato - Tintas Pinta</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -26,22 +28,47 @@
             <a href="#" class="cabecalho__"><img src="img/carrinho.svg" title="Carrinho de Compras" alt="carrinho de compras" class="cabecalho__carrinho"></a>
         </nav>
     </header>
-    <main>
-        <!-- Temporário -->
-        <section class="temp">
-            <h1 class="temph1">Página em construção</h1>
-            <figure>
-                <img class="tempimg" src="img/construction-gif-1.gif" alt="pagina em construção">
-                <img class="tempimg" src="img/construction-gif-2.gif" alt="pagina em construção">
-            </figure>
+    <main class="contato">
+        <section class="contato__titulo">
+            <h1>Olá, entre em contato com a Tintas Pinta </h1>
+            <p>Preencha o formulário com suas informações</p>
         </section>
-        
+        <form class="formulario">
+            <fieldset class="formulario__infos">
+                <label for="name" class="formulario__label-infos">Nome *</label>
+                <input class="formulario__input-infos" type="text" pattern="^([ \u00c0-\u00ffa-zA-Z])+$" title="Digite somente caracteres alfabeticos" id="name" placeholder="Digite seu nome" required>
+                
+                <label for="sobrenome" class="formulario__label-infos">Sobrenome *</label>
+                <input class="formulario__input-infos" type="text" pattern="^([ \u00c0-\u00ffa-zA-Z])+$" title="Digite somente caracteres alfabeticos" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                
+                <label for="email" class="formulario__label-infos">E-mail *</label>
+                <input class="formulario__input-infos" type="email" pattern="^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$" title="Por favor verifique se você digitou corretamente o seu e-mail" id="email" placeholder="Digite seu E-mail" required>
+                
+                <label for="celular" class="formulario__label-infos">Celular *</label>
+                <input class="formulario__input-infos" type="tel" id="celular" name="celular" pattern="^\([1-9]{2}\) [8-9][0-9]{4}-\d{4}$" title="Digite o nº de seu celular" placeholder="(xx) xxxxx-xxxx" required> 
+            </fieldset>
+            
+            <fieldset class="formulario__radio">
+                <legend class="formulario__radio-legend">Como prefere o nosso contato?</legend>
+                <label for="radio-email" class="formulario__radio-label">
+                <input class="formulario__radio-input" type="radio" name="contato" value="email" id="radio-email">Email</label>
 
-        
+                <label for="radio-telefone" class="formulario__radio-label">
+                <input class="formulario__radio-input" type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label>
 
+                <label for="radio-whatsapp" class="formulario__radio-label">
+                <input class="formulario__radio-input" type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked>WhatsApp</label>
+            </fieldset>
+
+            <fieldset class="formulario__texto">
+                <legend class="formulario__texto-legend">Gostaria de deixar um comentário?</legend>
+                <textarea class="formulario__texto-area" name="comentario" rows="3" cols="30" placeholder="Comentário opcional..."></textarea>
+            </fieldset>
+
+            <button type="submit" class="botao">Submit</button>
+        </form>
 
     </main>
-
     <footer class="rodape">
         <div class="rodape__caixa">
             <h3 class="rodape__texto">&#169 Tintas Pinta - 2022 </h3>
@@ -52,7 +79,7 @@
            <a href="#"><img class="rodape__icones" src="img/icons8-reproduzir-youtube.svg" alt=""></a>
         </div>
     </footer>
-    
-<script></script>
+
+    <script src="script/validaCel.js" type="text/javascript"></script>
 </body>
 </html>

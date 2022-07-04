@@ -1,30 +1,29 @@
-@import url("cabecalho.css"); /* Separando os estilos por setor da página */
+/* Separando os estilos por setor da página */
+@import url("cabecalho.css");
 @import url("carrossel.css");
-@import url("calculadora.css");
-@import url("contato.css");
 @import url("secaodois.css");
 @import url("rodape.css");
+@import url("calculadora.css");
+@import url("contato.css");
+
 
 /* Variáveis para cor e fonte secundária*/
 :root {
     --fonte-secundaria: 'Bebas Neue';
     --cor-de-fundo: rgb(196, 193, 215);
     --cor-de-fundo2: rgb(174, 168, 214);
-    --cor-de-fundo-transparente: rgba(196, 193, 215, 0.5);
+    --cor-da-borda-input: #CED4DA;
+    --cor-de-fundo-contato: rgba(196, 193, 215, 0.5);
     --branco: #FFFFFF;
     --preto: rgba(0, 0, 0, 0.95);
-    --laranja: #EB9B00;
-    --azul-degrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
-    --azul: #002F52;
-    --cinza-claro: #858585;
     /* sobrescrevendo o bootstrap */
     --bs-link-color: none;
     --bs-link-hover-color: none;
     --bs-body-color: none;
 }
 
-/* Medida padrao paizao de todos */
 
+/* Medida padrao paizao de todos */
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -32,7 +31,9 @@ body {
     background-image: url("../img/fundo2.jpg");
     background-position: bottom;
     background-size: cover;
+    background-repeat: no-repeat;
 }
+
 
 /* Deslocar o main para a linha seguinte ao fim do cabeçalho */
 main {
