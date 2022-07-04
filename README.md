@@ -8,12 +8,12 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 2. Um rodapé padrão em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 3. Na página inicial: uma apresentação dos conteúdos das páginas. ![99% quase](https://progress-bar.dev/99/?title=quase)
 4. Na 2ª página: calculadora de tintas ![10% parado](https://progress-bar.dev/10/?title=parado)
-5. Na 3ª página: Formulário para contato. ![50% construindo](https://progress-bar.dev/50/?title=contruindo)
+5. Na 3ª página: Formulário para contato. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 
 <br>
 
 #### Descrição de cada item do To-Do:
-~~1. Um cabeçalho padrão de navegação em todas as páginas:~~
+1. Um cabeçalho padrão de navegação em todas as páginas:
 - ~~Montando um cabecalho com tag ```<nav>``` e em listas não ordenadas (tags ```<ul>``` e ```<li>```)~~
 - ~~Display flexbox para colocar em linha os itens da lista.~~
 - ~~Definindo design, cores, fonte e tamnho.~~
@@ -37,7 +37,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 - mudar as fotos do carrossel.
 - talves inverter a posição do carrossel com a seção 2.
 - ~~ajustar a resposividade para telas maiores.~~
-- ...
+
 <br>
 
 4. Na 2ª página: calculadora de tintas:
@@ -46,11 +46,12 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 - testar os calculos.
 - testar a lógica (I/O).
 - criar os inputs de usuário
-- ...
+
+<br>
 
 5. Na 3ª página: Formulário para contato.
-- Campos de nome e sobrenome ou nome completo com required e validação regex somente caracteres alfabeticos
-- Campo de endereço de e-mail com validação regex
-- Campo de telefone com ddd com validação regex
-- Campo de data de nascimento ou idade com validação regex
-- ...
+- ~~Campos de nome e sobrenome ou nome completo com required e validação regex somente caracteres alfabeticos~~
+- ~~Campo de endereço de e-mail com required e validação regex~~
+- ~~Campo de celular com ddd com required, validação regex e mascara~~
+- ~~Campo de escolha (tipo radio) com marcação padrão definida~~
+- ~~Campo de comentários opcional~~
