@@ -1,12 +1,59 @@
-/* Temporário */
-.temp {
+.calculadora {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.parede1__titulo {
     text-align: center;
-    font-size: 2rem;
+}
+
+.parede1 {
+    background-color: var(--cor-de-fundo-contato);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.parede1__entrada {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.p1entrada__label {
+    font-size: 1.125rem;
+    margin-bottom: 0.2rem;
+}
+
+.p1entrada__input {
+    width: 100%;
+    height: 2.375rem;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    border: 1px solid var(--cor-da-borda-input);
+    border-radius: 5px;
+    padding: 0.5rem;
 
 }
-.temph1 {
-    margin: 10px auto;
+
+.p1resultado__inner {
+    font-size: 1.125rem;
+    margin: 0.5rem 0 0.5rem 0;
 }
-.tempimg {
-    width: 288px;
+
+
+
+
+
+@media (min-width: 576px) {
+    .calculadora {
+        max-width: 540px;
+    }
+} 
+
+@media (min-width: 763px) {
+    .calculadora {
+        max-width: 720px;
+    }
 }

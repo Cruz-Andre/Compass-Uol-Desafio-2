@@ -29,52 +29,100 @@
  *      o 18 L
  */
 
-/**
- * matemática daqui para baixo
- */
+function calculaTinta() {
+    let comprimento = parseFloat(document.getElementById("comprimento").value);
+    document.getElementById("compInput").innerHTML = "COMPRIMENTO da parede: " + comprimento + "m";
 
-var comprimento = 5.57;
-console.log("\nCOMPRIMENTO da parede: " + comprimento);
+    var altura = parseFloat(document.getElementById("altura").value);
+    document.getElementById("alturaInput").innerHTML = "ALTURA da parede: " + altura + "m";
 
-var altura = 2.20;
-console.log("ALTURA da parede: " + altura);
+    var m2Parede = parseFloat((comprimento * altura).toFixed(2));
+    document.getElementById("m2paredeResultado").innerHTML = "m² da parede: " + m2Parede + "m²";
 
-var m2Parede = parseFloat((comprimento * altura).toFixed(2));
-console.log("\nm² da parede: " + m2Parede + "\n");
+    if (m2Parede >= 1 && m2Parede <= 50) {
+        var umlitroTinta5m2 = 5;
+        var quantosLitros = parseFloat((m2Parede / umlitroTinta5m2).toFixed(2));
+        document.getElementById("precisoDe").innerHTML = "São necessários " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2Parede + "m² da parede";
 
-var m2Sala = parseFloat(((comprimento * altura) * 4).toFixed(2)); // descontar portas e janelas.
-console.log("m² da sala: " + m2Sala + "\n");
+        var latas = 0;
+        var latas18 = 0;
+        var latas36 = 0;
+        var latas25 = 0;
+        var latas05 = 0;
+        var latasAbaixoDe05 = 0;
+        while (quantosLitros != 0) {
+            if(quantosLitros >= 18.00) {
+                quantosLitros = quantosLitros - 18.00;
+                latas++;
+                latas18++;
+            }
+            else if(quantosLitros >= 3.60) {
+                quantosLitros = quantosLitros - 3.60;
+                latas++;
+                latas36++;
+            }
+            else if(quantosLitros >= 2.50) {
+                quantosLitros = quantosLitros - 2.50;
+                latas++;
+                latas25++;
+            }
+            else if(quantosLitros >= 0.50) {
+                quantosLitros = quantosLitros - 0.50;
+                latas++;
+                latas05++;
+            }
+            else if(quantosLitros < 0.50) {
+                quantosLitros = 0;
+                latas++;
+                latasAbaixoDe05++;
+            }
+        }
+        document.getElementById("lata18l").innerHTML = "Numero de latas de 18L: " + latas18;
+        document.getElementById("lata36l").innerHTML = "Numero de latas de 3.6L: " + latas36;
+        document.getElementById("lata25l").innerHTML = "Numero de latas de 2.5L: " + latas25;
+        document.getElementById("lata05l").innerHTML = "Numero de latas de 0.5L: " + latas05;
+        document.getElementById("lata0l").innerHTML = "Numero de latas adicionais de 0.5L: " + latasAbaixoDe05;
+        document.getElementById("latas").innerHTML = "Numero total de latas: " + latas;
+    
+    }
 
-var m2Porta = 0.80 * 1.90; // 1.52m²
-var m2Janela = 1.20 * 2.0; // 2.40m²
-var somaM2PortaJanela = parseFloat((m2Porta + m2Janela).toFixed(2)); // 3,92m²
+    else {
+        document.getElementById("erro").innerHTML = "O tamanho da parede não pode ter menos de 1m² ou mais de 50m²";
+    }
 
-var tamMinParComPorJan = somaM2PortaJanela * 2 // 7,84m²
-
-var m2SalaTirandoPJ = m2Sala - somaM2PortaJanela //m2 da sala tirando 1 porta e 1 janela
-console.log("m² da sala Tirando Porta e Janela: " + m2SalaTirandoPJ + "\n");
-
-var umlitroTinta5m2 = 5;
-var quantosLitros = m2SalaTirandoPJ / umlitroTinta5m2;
-console.log("São necessário " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2SalaTirandoPJ + " m² da sala\n");
+}
 
 
+  // var m2Sala = parseFloat(((comprimento * altura) * 4).toFixed(2)); // descontar portas e janelas.
+  // console.log("m² da sala: " + m2Sala + "\n");
 
-/**
- * lógica daqui para baixo
- */
+  // var m2Porta = 0.80 * 1.90; // 1.52m²2
+  // var m2Janela = 1.20 * 2.0; // 2.40m²
+  // var somaM2PortaJanela = parseFloat((m2Porta + m2Janela).toFixed(2)); // 3,92m²
 
-var regra2 = (m2Parede / 2).toFixed(2);
-var cincoentaPorCento = somaM2PortaJanela < regra2;
-var soma = m2Parede - (m2Porta + m2Janela);
+  // var tamMinParComPorJan = somaM2PortaJanela * 2 // 7,84m²
 
-console.log("m² da Porta: " + m2Porta + "\n");
-console.log("m² da Janela: " + m2Janela + "\n");
-console.log("m² da Porta mais Janela: " + somaM2PortaJanela + "\n");
-console.log("m² Tamanho mínimo da parede com porta e janela: " + tamMinParComPorJan + "\n");
-console.log("m² da parede tirando a 1 porta e 1 janela: " + soma + "\n");
-console.log("regra2: " + regra2 + "\n");
-console.log("regra2: " + cincoentaPorCento + "\n");
+  // var m2SalaTirandoPJ = m2Sala - somaM2PortaJanela //m2 da sala tirando 1 porta e 1 janela
+  // console.log("m² da sala Tirando Porta e Janela: " + m2SalaTirandoPJ + "\n");
+
+  // var umlitroTinta5m2 = 5;
+  // var quantosLitros = m2SalaTirandoPJ / umlitroTinta5m2;
+  // console.log("São necessário " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2SalaTirandoPJ + " m² da sala\n");
 
 
 
+  /**
+   * lógica daqui para baixo
+   */
+
+  // var regra2 = (m2Parede / 2).toFixed(2);
+  // var cincoentaPorCento = somaM2PortaJanela < regra2;
+  // var soma = m2Parede - (m2Porta + m2Janela);
+
+  // console.log("m² da Porta: " + m2Porta + "\n");
+  // console.log("m² da Janela: " + m2Janela + "\n");
+  // console.log("m² da Porta mais Janela: " + somaM2PortaJanela + "\n");
+  // console.log("m² Tamanho mínimo da parede com porta e janela: " + tamMinParComPorJan + "\n");
+  // console.log("m² da parede tirando a 1 porta e 1 janela: " + soma + "\n");
+  // console.log("regra2: " + regra2 + "\n");
+  // console.log("regra2: " + cincoentaPorCento + "\n");

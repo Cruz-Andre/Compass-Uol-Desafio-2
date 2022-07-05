@@ -26,14 +26,33 @@
             <a href="#" class="cabecalho__"><img src="img/carrinho.svg" title="Carrinho de Compras" alt="carrinho de compras" class="cabecalho__carrinho"></a>
         </nav>
     </header>
-    <main>
-        <!-- Temporário -->
-        <section class="temp">
-            <h1 class="temph1">Página em construção</h1>
-            <figure>
-                <img class="tempimg" src="img/construction-gif-1.gif" alt="pagina em construção">
-                <img class="tempimg" src="img/construction-gif-2.gif" alt="pagina em construção">
-            </figure>
+    <main class="calculadora">
+        <section class="parede1">
+            <h1 class="parede1__titulo">Calculadora de Tintas</h1>
+            <div class="parede1__entrada">
+                <label for="comprimento" class="p1entrada__label">Comprimento da parede</label>
+                <input type="number" class="p1entrada__input" id="comprimento" name="comprimento" value="" placeholder="ex: 3" required>
+
+                <label for="altura" class="p1entrada__label">Altura da parede</label>
+                <input type="number" class="p1entrada__input" id="altura" name="altura" value="" placeholder="ex: 2.10" required>
+                    
+                <input type="button" class="p1entrada__botao" onclick="calculaTinta()" value="Calcule" id="calcule">
+            </div>
+
+            <div class="parede1__resultado">
+				<h2 id="compInput" class="p1resultado__inner"></h2>
+				<h2 id="alturaInput" class="p1resultado__inner"></h2>
+                <h2 id="m2paredeResultado" class="p1resultado__inner"></h2>
+                <h2 id="precisoDe" class="p1resultado__inner"></h2>
+                <h2 id="lata18l" class="p1resultado__inner"></h2>
+                <h2 id="lata36l" class="p1resultado__inner"></h2>
+                <h2 id="lata25l" class="p1resultado__inner"></h2>
+                <h2 id="lata05l" class="p1resultado__inner"></h2>
+                <h2 id="lata0l" class="p1resultado__inner"></h2>
+                <h2 id="latas" class="p1resultado__inner"></h2>
+                <h2 id="erro" class="p1resultado__inner"></h2>
+			</div>
+
         </section>
         
 
@@ -53,6 +72,6 @@
         </div>
     </footer>
 
-<script></script>
+<script src="script/calculadora.js"></script>
 </body>
 </html>
