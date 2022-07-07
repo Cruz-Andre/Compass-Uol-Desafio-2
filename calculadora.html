@@ -27,19 +27,65 @@
         </nav>
     </header>
     <main class="calculadora">
-        <section class="parede1">
-            <h1 class="parede1__titulo">Calculadora de Tintas</h1>
+        <section class="paredes">
+            <h1 class="paredes__titulo">Calculadora de Tintas</h1>
+            <p class="paredes__texto">Calcula entre 1m² a 50m² de área de cada parede, se houver porta(s) e/ou janela(s) a área destas não pode ser superior a 50% da área da parede.</p>
             <div class="parede1__entrada">
-                <label for="comprimento" class="p1entrada__label">Comprimento da parede</label>
+                <label for="comprimento" class="p1entrada__label">Comprimento da parede 1 em metros</label>
                 <input type="number" class="p1entrada__input" id="comprimento" name="comprimento" value="" placeholder="ex: 3" required>
 
-                <label for="altura" class="p1entrada__label">Altura da parede</label>
+                <label for="altura" class="p1entrada__label">Altura da parede 1 em metros</label>
                 <input type="number" class="p1entrada__input" id="altura" name="altura" value="" placeholder="ex: 2.10" required>
-                    
-                <input type="button" class="p1entrada__botao" onclick="calculaTinta()" value="Calcule" id="calcule">
+
+                <label for="p1portas" class="p1entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p1entrada__input" id="p1portas" name="portas" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p1janelas" class="p1entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p1entrada__input" id="p1janelas" name="janelas" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede1__resultado">
+                    <h2 id="compInput" class="p1resultado__inner"></h2>
+                    <h2 id="alturaInput" class="p1resultado__inner"></h2>
+                    <h2 id="m2paredeResultado" class="p1resultado__inner"></h2>
+                    <h2 id="precisoDe" class="p1resultado__inner"></h2>
+                    <h2 id="lata18l" class="p1resultado__inner"></h2>
+                    <h2 id="lata36l" class="p1resultado__inner"></h2>
+                    <h2 id="lata25l" class="p1resultado__inner"></h2>
+                    <h2 id="lata05l" class="p1resultado__inner"></h2>
+                    <h2 id="lata0l" class="p1resultado__inner"></h2>
+                    <h2 id="latas" class="p1resultado__inner"></h2>
+                    <h2 id="erro" class="p1resultado__inner erro1"></h2>
+                </div>
             </div>
 
-            <div class="parede1__resultado">
+            <div class="parede2__entrada">
+                <label for="comprimento2" class="p2entrada__label">Comprimento da parede 2 em metros</label>
+                <input type="number" class="p2entrada__input" id="comprimento2" name="comprimento2" value="" placeholder="ex: 3" required>
+
+                <label for="altura2" class="p2entrada__label">Altura da parede 2 em metros</label>
+                <input type="number" class="p2entrada__input" id="altura2" name="altura2" value="" placeholder="ex: 2.10" required>
+
+                <div class="parede2__resultado">
+                    <h2 id="compInput2" class="p2resultado__inner"></h2>
+                    <h2 id="alturaInput2" class="p2resultado__inner"></h2>
+                    <h2 id="m2paredeResultado2" class="p2resultado__inner"></h2>
+                    <h2 id="precisoDe2" class="p2resultado__inner"></h2>
+                    <h2 id="lata18l2" class="p2resultado__inner"></h2>
+                    <h2 id="lata36l2" class="p2resultado__inner"></h2>
+                    <h2 id="lata25l2" class="p2resultado__inner"></h2>
+                    <h2 id="lata05l2" class="p2resultado__inner"></h2>
+                    <h2 id="lata0l2" class="p2resultado__inner"></h2>
+                    <h2 id="latas2" class="p2resultado__inner"></h2>
+                    <h2 id="erro2" class="p2resultado__inner"></h2>
+                </div>
+            </div>
+                
+            <input type="button" class="p1entrada__botao" onclick="calcula()" value="Calcule" id="calcule">
+            
+
+            <div class="parede__resultado">
 				<h2 id="compInput" class="p1resultado__inner"></h2>
 				<h2 id="alturaInput" class="p1resultado__inner"></h2>
                 <h2 id="m2paredeResultado" class="p1resultado__inner"></h2>

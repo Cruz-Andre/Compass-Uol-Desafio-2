@@ -60,16 +60,19 @@ function calcParede1() {
         var alturaDaPorta = 1.90;
         var comprimentoDaJanela = janelas * 2.00;
         var alturaDaJanela = janelas * 1.20;
-        //colocar a codição dentro do if abaixou no if de cima ou copiar o de cima aqui tb (testar amanhã... dia 08/07...)
         if (comprimento < (comprimentoDaPorta + comprimentoDaJanela) || altura < (alturaDaPorta + 0.30 + alturaDaJanela )) {
                 console.log("comprimento das portas mais comprimento das janelas: " + (comprimentoDaPorta + comprimentoDaJanela));
-                console.log("Altura da porta (é só uma porta mesmo. Assim não coloca uma porta em cima da outra) mais 0,30cm mais altura das janelas: " + (alturaDaPorta + 0.30 + alturaDaJanela));
+                console.log(alturaDaPorta + 0.30 + alturaDaJanela);
                 console.log("O comprimento da Parede deve ser maior que o comprimento da janela e da porta");
-                
-                //ainda testando getelementbyid ou queryselector
-                document.querySelector(".erro1").innerHTML = "O comprimento altura tal...."; 
+                document.getElementById("erro").innerHTML = "O tamanho da parede Não pode ser menor que 1m² e maior que 50m²";
+                document.getElementById("precisoDe").innerHTML = "";
+                document.getElementById("lata18l").innerHTML = "";
+                document.getElementById("lata36l").innerHTML = "";
+                document.getElementById("lata25l").innerHTML = "";
+                document.getElementById("lata05l").innerHTML = "";
+                document.getElementById("lata0l").innerHTML = "";
+                document.getElementById("latas").innerHTML = "";
             }
-        // else {} tanto faz com ou sem.
 
         var umlitroTinta5m2 = 5;
         var quantosLitros = parseFloat((m2Parede / umlitroTinta5m2).toFixed(2));
@@ -114,19 +117,20 @@ function calcParede1() {
         document.getElementById("lata05l").innerHTML = "Numero de latas de 0.5L: " + latas05;
         document.getElementById("lata0l").innerHTML = "Numero de latas adicionais de 0.5L: " + latasAbaixoDe05;
         document.getElementById("latas").innerHTML = "Numero total de latas: " + latas;
-        //document.getElementsByClassName(".erro1").innerHTML = ""; ainda testando esse ou queryselector
-        
-    }
-    else {
-        document.getElementById("erro").innerHTML = "O tamanho da parede Não pode ser menor que 1m² e maior que 50m²";
-        document.getElementById("precisoDe").innerHTML = "";
-        document.getElementById("lata18l").innerHTML = "";
-        document.getElementById("lata36l").innerHTML = "";
-        document.getElementById("lata25l").innerHTML = "";
-        document.getElementById("lata05l").innerHTML = "";
-        document.getElementById("lata0l").innerHTML = "";
-        document.getElementById("latas").innerHTML = "";
-    }
+        document.getElementById("erro").innerHTML = "";
+        }
+
+        else {
+            document.getElementById("erro").innerHTML = "O tamanho da parede Não pode ser menor que 1m² e maior que 50m²";
+            document.getElementById("precisoDe").innerHTML = "";
+            document.getElementById("lata18l").innerHTML = "";
+            document.getElementById("lata36l").innerHTML = "";
+            document.getElementById("lata25l").innerHTML = "";
+            document.getElementById("lata05l").innerHTML = "";
+            document.getElementById("lata0l").innerHTML = "";
+            document.getElementById("latas").innerHTML = "";
+        }
+
 }
 
 function calcParede2() {
