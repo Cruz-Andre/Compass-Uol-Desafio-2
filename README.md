@@ -7,7 +7,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 1. Um cabeçalho padrão de navegação em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 2. Um rodapé padrão em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 3. Na página inicial: uma apresentação dos conteúdos das páginas. ![99% quase](https://progress-bar.dev/99/?title=quase)
-4. Na 2ª página: calculadora de tintas ![45% construindo](https://progress-bar.dev/45/?title=construindo)
+4. Na 2ª página: calculadora de tintas ![65% construindo](https://progress-bar.dev/65/?title=construindo)
 5. Na 3ª página: Formulário para contato. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 
 <br>
