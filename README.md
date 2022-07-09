@@ -7,7 +7,7 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 1. Um cabeçalho padrão de navegação em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 2. Um rodapé padrão em todas as páginas. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 3. Na página inicial: uma apresentação dos conteúdos das páginas. ![99% quase](https://progress-bar.dev/99/?title=quase)
-4. Na 2ª página: calculadora de tintas ![65% construindo](https://progress-bar.dev/65/?title=construindo)
+4. Na 2ª página: calculadora de tintas ![95% construindo](https://progress-bar.dev/95/?title=construindo)
 5. Na 3ª página: Formulário para contato. ![100% finalizado](https://progress-bar.dev/100/?title=finalizado)
 
 <br>
@@ -42,17 +42,19 @@ GitHub Pages: https://cruz-andre.github.io/Compass-Uol-Desafio-2/
 
 4. Na 2ª página: calculadora de tintas:
 - ~~Preparando o arquivo javascript com as formulas e calculos matemáticos.~~
-- Escrevendo um algoritmo ou pseudo código para definir o passo a passo da lógica do plano de negócios.
+- ~~Escrevendo um algoritmo ou pseudo código para definir o passo a passo da lógica do plano de negócios.~~
 - ~~Criar os inputs de usuário~~
 - ~~calcular o m² da parede~~
 - ~~calcular a quantidade de tinta necessária para pintar a parede~~
 - ~~Mostrar quais latas de tintas necessárias, tipos de tamanho em Litros~~
 - ~~Condição if para a parede não ser menor que 1m² e maior que 50m²~~
 - ~~Mostrar que a parede não pode ter menos que 1m² e mais que 50m² quando o usuário digita os dados que aferem o resultado~~
-- condição para colocar porta(s) e/ou janela(s) e cada uma das paredes.
-- condição que a soma das áreas das porta(s) e/ou janela(s) não seja maior que 50% da área da parede.
-- testar os calculos.
-- testar a lógica (I/O).
+- ~~condição para colocar porta(s) e/ou janela(s) e cada uma das paredes.~~
+- ~~condição que a soma das áreas das porta(s) e/ou janela(s) não seja maior que 50% da área da parede.~~
+- testar os calculos. ...testando
+- testar a lógica (I/O). ...testando
+- comentar o código. ...comentando
+- arrumar formatação dos textos
 
 
 <br>
