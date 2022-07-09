@@ -33,10 +33,10 @@
                 <p class="paredes__texto">Calcula entre 1m² a 50m² de área de cada parede, se houver porta(s) e/ou janela(s) a área destas não pode ser superior a 50% da área da parede.</p>
             </div>
             <div class="parede1__entrada">
-                <label for="comprimento" class="p1entrada__label">Comprimento da parede 1 em metros</label>
+                <label for="comprimento" class="p1entrada__label">Comprimento da 1ª parede em metros</label>
                 <input type="number" class="p1entrada__input" id="comprimento" name="comprimento" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
-                <label for="altura" class="p1entrada__label">Altura da parede 1 em metros</label>
+                <label for="altura" class="p1entrada__label">Altura da 1ª parede em metros</label>
                 <input type="number" class="p1entrada__input" id="altura" name="altura" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="p1portas" class="p1entrada__label">Quantas Portas?</label>
@@ -58,7 +58,9 @@
                     <h2 id="lata05l" class="p1resultado__inner"></h2>
                     <h2 id="lata0l" class="p1resultado__inner"></h2>
                     <h2 id="latas" class="p1resultado__inner"></h2>
-                    <h2 id="erro" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoArea" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ" class="p1resultado__inner"></h2>
                     <h2 id="erroP" class="p1resultado__inner"></h2>
                     <h2 id="erroJ" class="p1resultado__inner"></h2>
                     <h2 id="erroPeJ" class="p1resultado__inner"></h2>
@@ -68,10 +70,10 @@
             </div>
 
             <div class="parede2__entrada">
-                <label for="comprimento2" class="p2entrada__label">Comprimento da parede 2 em metros</label>
+                <label for="comprimento2" class="p2entrada__label">Comprimento da 2ª parede em metros</label>
                 <input type="number" class="p2entrada__input" id="comprimento2" name="comprimento2" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
-                <label for="altura2" class="p2entrada__label">Altura da parede 2 em metros</label>
+                <label for="altura2" class="p2entrada__label">Altura da 2ª parede em metros</label>
                 <input type="number" class="p2entrada__input" id="altura2" name="altura2" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="p2portas" class="p2entrada__label">Quantas Portas?</label>
@@ -93,7 +95,9 @@
                     <h2 id="lata05l2" class="p2resultado__inner"></h2>
                     <h2 id="lata0l2" class="p2resultado__inner"></h2>
                     <h2 id="latas2" class="p2resultado__inner"></h2>
-                    <h2 id="erro2" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoArea2" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ2" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ2" class="p2resultado__inner"></h2>
                     <h2 id="erroP2" class="p2resultado__inner"></h2>
                     <h2 id="erroJ2" class="p2resultado__inner"></h2>
                     <h2 id="erroPeJ2" class="p2resultado__inner"></h2>
@@ -103,10 +107,10 @@
             </div>
 
             <div class="parede3__entrada">
-                <label for="comprimento3" class="p3entrada__label">Comprimento da parede 3 em metros</label>
+                <label for="comprimento3" class="p3entrada__label">Comprimento da 3ª parede em metros</label>
                 <input type="number" class="p3entrada__input" id="comprimento3" name="comprimento3" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
-                <label for="altura3" class="p3entrada__label">Altura da parede 3 em metros</label>
+                <label for="altura3" class="p3entrada__label">Altura da 3ª parede em metros</label>
                 <input type="number" class="p3entrada__input" id="altura3" name="altura3" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="p3portas" class="p3entrada__label">Quantas Portas?</label>
@@ -128,7 +132,9 @@
                     <h2 id="lata05l3" class="p3resultado__inner"></h2>
                     <h2 id="lata0l3" class="p3resultado__inner"></h2>
                     <h2 id="latas3" class="p3resultado__inner"></h2>
-                    <h2 id="erro3" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoArea3" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ3" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ3" class="p3resultado__inner"></h2>
                     <h2 id="erroP3" class="p3resultado__inner"></h2>
                     <h2 id="erroJ3" class="p3resultado__inner"></h2>
                     <h2 id="erroPeJ3" class="p3resultado__inner"></h2>
@@ -138,10 +144,10 @@
             </div>
 
             <div class="parede4__entrada">
-                <label for="comprimento4" class="p4entrada__label">Comprimento da parede 4 em metros</label>
+                <label for="comprimento4" class="p4entrada__label">Comprimento da 4ª parede em metros</label>
                 <input type="number" class="p4entrada__input" id="comprimento4" name="comprimento4" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
-                <label for="altura4" class="p4entrada__label">Altura da parede 4 em metros</label>
+                <label for="altura4" class="p4entrada__label">Altura da 4ª parede em metros</label>
                 <input type="number" class="p4entrada__input" id="altura4" name="altura4" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="p4portas" class="p4entrada__label">Quantas Portas?</label>
@@ -163,7 +169,9 @@
                     <h2 id="lata05l4" class="p4resultado__inner"></h2>
                     <h2 id="lata0l4" class="p4resultado__inner"></h2>
                     <h2 id="latas4" class="p4resultado__inner"></h2>
-                    <h2 id="erro4" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoArea4" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ4" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ4" class="p4resultado__inner"></h2>
                     <h2 id="erroP4" class="p4resultado__inner"></h2>
                     <h2 id="erroJ4" class="p4resultado__inner"></h2>
                     <h2 id="erroPeJ4" class="p4resultado__inner"></h2>
@@ -173,6 +181,7 @@
             </div>
 
             <div class="parede__resultado">
+                <h2 class="p1resultado__inner">TOTAIS</h2>
 				<h2 id="total" class="p1resultado__inner"></h2>
                 <h2 id="lata18lt" class="p4resultado__inner"></h2>
                 <h2 id="lata36lt" class="p4resultado__inner"></h2>

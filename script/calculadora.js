@@ -36,26 +36,27 @@ function calcParede1() {
     var altura = parseFloat(document.getElementById("altura").value);
     document.getElementById("alturaInput").innerHTML = "ALTURA da parede: " + altura + "m";
 
-    m2Parede = parseFloat((comprimento * altura).toFixed(2));
-    document.getElementById("m2paredeResultado").innerHTML = "m² da parede: " + m2Parede + "m²";
+    var m2ParedeP1 = parseFloat((comprimento * altura).toFixed(2));
+    document.getElementById("m2paredeResultado").innerHTML = "m² da parede: " + m2ParedeP1 + "m²";
 
-    portas = parseInt(document.getElementById("p1portas").value);
-    janelas = parseInt(document.getElementById("p1janelas").value);
+    var portasP1 = parseInt(document.getElementById("p1portas").value);
+    var janelasP1 = parseInt(document.getElementById("p1janelas").value);
 
-    areaDasPortasEJanelas();
+    areaDasPortasEJanelas(portasP1, janelasP1, m2ParedeP1);
     
-    if (m2Parede >= 1 && m2Parede <= 50 && (m2Parede / 2) > somaPeJ) {
-        m2ParedeMenosPeJ1 = parseFloat((m2Parede - (areaPorta + areaJanela)).toFixed(2));
+    m2ParedeMenosPeJ1 = parseFloat((m2ParedeP1 - (areaPorta + areaJanela)).toFixed(2));
+    var umlitroTinta5m2 = 5;
+    quantosLitros1 = parseFloat((m2ParedeMenosPeJ1 / umlitroTinta5m2).toFixed(2));
+    
+    if (m2ParedeP1 >= 1 && m2ParedeP1 <= 50 && (m2ParedeP1 / 2) > somaPeJ) {
 
-        comprimentoAlturaPortasJanelas()
+        comprimentoAlturaPortasJanelas(portasP1, janelasP1)
         
         if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
-            var umlitroTinta5m2 = 5;
-            quantosLitros = parseFloat((m2ParedeMenosPeJ1 / umlitroTinta5m2).toFixed(2));
-            quantosLitros1 = quantosLitros;
-            document.getElementById("precisoDe").innerHTML = "São necessários " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2ParedeMenosPeJ1 + "m² da parede";
-            calcLatas();
 
+            document.getElementById("precisoDe").innerHTML = "São necessários " + quantosLitros1 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ1 + "m² da parede";
+            calcLatas(quantosLitros1);
+            
             document.getElementById("lata18l").innerHTML = "Numero de latas de 18L: " + latas18;
             document.getElementById("lata36l").innerHTML = "Numero de latas de 3.6L: " + latas36;
             document.getElementById("lata25l").innerHTML = "Numero de latas de 2.5L: " + latas25;
@@ -64,7 +65,9 @@ function calcParede1() {
             document.getElementById("latas").innerHTML = "Numero total de latas: " + latas;
             document.getElementById("erroAvisoP").innerHTML = "";
             document.getElementById("erroAvisoJ").innerHTML = "";
-            document.getElementById("erro").innerHTML = "";
+            document.getElementById("erroAvisoArea").innerHTML = "";
+            document.getElementById("erroAvisoAreaPJ").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ").innerHTML = "";
             document.getElementById("erroP").innerHTML = "";
             document.getElementById("erroJ").innerHTML = "";
             document.getElementById("erroPeJ").innerHTML = "";
@@ -80,14 +83,14 @@ function calcParede1() {
             document.getElementById("latas").innerHTML = "";
             document.getElementById("erroAvisoP").innerHTML = "A altura mínima da parede, se houver porta, é de 2,20m (1,90m mais 0,30m).";
             document.getElementById("erroAvisoJ").innerHTML = "A altura mínima da parede, se houver janela, é de 1,20m.";
-            document.getElementById("erro").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoArea").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoAreaPJ").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ").innerHTML = "";
             document.getElementById("erroP").innerHTML = "O comprimento da(s) porta(s) foi: " + comprimentoDaPorta + "m";
             document.getElementById("erroJ").innerHTML = "O comprimento da(s) janela(s) foi: " + comprimentoDaJanela + "m";
-            document.getElementById("erroPeJ").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";
-            
+            document.getElementById("erroPeJ").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";    
         }
-
-        
+ 
     }
     else {
         document.getElementById("precisoDe").innerHTML = "";
@@ -99,7 +102,9 @@ function calcParede1() {
         document.getElementById("latas").innerHTML = "";
         document.getElementById("erroAvisoP").innerHTML = "";
         document.getElementById("erroAvisoJ").innerHTML = "";
-        document.getElementById("erro").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoArea").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoAreaPJ").innerHTML = "Ou a soma da área de Porta(s) e/ou Janela(s) não pode ser maior que 50% da área da parede.";
+        document.getElementById("erroAvisoAreaSomaPJ").innerHTML = "O m² da parede dividido por 2 é: " + (m2ParedeP1 / 2).toFixed(2) + "m²." + " A Soma das portas e/ou janelas é: "  + somaPeJ + "m²";
         document.getElementById("erroP").innerHTML = "";
         document.getElementById("erroJ").innerHTML = "";
         document.getElementById("erroPeJ").innerHTML = "";
@@ -114,26 +119,27 @@ function calcParede2() {
     var altura = parseFloat(document.getElementById("altura2").value);
     document.getElementById("alturaInput2").innerHTML = "ALTURA da parede: " + altura + "m";
 
-    m2Parede = parseFloat((comprimento * altura).toFixed(2));
-    document.getElementById("m2paredeResultado2").innerHTML = "m² da parede: " + m2Parede + "m²";
+    var m2ParedeP2 = parseFloat((comprimento * altura).toFixed(2));
+    document.getElementById("m2paredeResultado2").innerHTML = "m² da parede: " + m2ParedeP2 + "m²";
 
-    portas = parseInt(document.getElementById("p2portas").value);
-    janelas = parseInt(document.getElementById("p2janelas").value);
+    var portasP2 = parseInt(document.getElementById("p2portas").value);
+    var janelasP2 = parseInt(document.getElementById("p2janelas").value);
 
-    areaDasPortasEJanelas();
+    areaDasPortasEJanelas(portasP2, janelasP2, m2ParedeP2);
+
+    m2ParedeMenosPeJ2 = parseFloat((m2ParedeP2 - (areaPorta + areaJanela)).toFixed(2));
+    var umlitroTinta5m2 = 5;
+    quantosLitros2 = parseFloat((m2ParedeMenosPeJ2 / umlitroTinta5m2).toFixed(2));
     
-    if (m2Parede >= 1 && m2Parede <= 50 && (m2Parede / 2) > somaPeJ) {
-        m2ParedeMenosPeJ2 = parseFloat((m2Parede - (areaPorta + areaJanela)).toFixed(2));
+    if (m2ParedeP2 >= 1 && m2ParedeP2 <= 50 && (m2ParedeP2 / 2) > somaPeJ) {
 
-        comprimentoAlturaPortasJanelas()
+        comprimentoAlturaPortasJanelas(portasP2, janelasP2)
         
-        if (comprimento > (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
-            var umlitroTinta5m2 = 5;
-            quantosLitros = parseFloat((m2ParedeMenosPeJ2 / umlitroTinta5m2).toFixed(2));
-            quantosLitros2 = quantosLitros;
-            document.getElementById("precisoDe2").innerHTML = "São necessários " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2ParedeMenosPeJ2 + "m² da parede";
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
             
-            calcLatas();
+            document.getElementById("precisoDe2").innerHTML = "São necessários " + quantosLitros2 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ2 + "m² da parede";
+            
+            calcLatas(quantosLitros2);
             
             document.getElementById("lata18l2").innerHTML = "Numero de latas de 18L: " + latas18;
             document.getElementById("lata36l2").innerHTML = "Numero de latas de 3.6L: " + latas36;
@@ -143,7 +149,9 @@ function calcParede2() {
             document.getElementById("latas2").innerHTML = "Numero total de latas: " + latas;
             document.getElementById("erroAvisoP2").innerHTML = "";
             document.getElementById("erroAvisoJ2").innerHTML = "";
-            document.getElementById("erro2").innerHTML = "";
+            document.getElementById("erroAvisoArea2").innerHTML = "";
+            document.getElementById("erroAvisoAreaPJ2").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ2").innerHTML = "";
             document.getElementById("erroP2").innerHTML = "";
             document.getElementById("erroJ2").innerHTML = "";
             document.getElementById("erroPeJ2").innerHTML = "";
@@ -159,14 +167,14 @@ function calcParede2() {
             document.getElementById("latas2").innerHTML = "";
             document.getElementById("erroAvisoP2").innerHTML = "A altura mínima da parede, se houver porta, é de 2,20m (1,90m mais 0,30m).";
             document.getElementById("erroAvisoJ2").innerHTML = "A altura mínima da parede, se houver janela, é de 1,20m.";
-            document.getElementById("erro2").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoArea2").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoAreaPJ2").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ2").innerHTML = "";
             document.getElementById("erroP2").innerHTML = "O comprimento da(s) porta(s) foi: " + comprimentoDaPorta + "m";
             document.getElementById("erroJ2").innerHTML = "O comprimento da(s) janela(s) foi: " + comprimentoDaJanela + "m";
-            document.getElementById("erroPeJ2").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";
-            
+            document.getElementById("erroPeJ2").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m"; 
         }
 
-        
     }
     else {
         document.getElementById("precisoDe2").innerHTML = "";
@@ -178,13 +186,14 @@ function calcParede2() {
         document.getElementById("latas2").innerHTML = "";
         document.getElementById("erroAvisoP2").innerHTML = "";
         document.getElementById("erroAvisoJ2").innerHTML = "";
-        document.getElementById("erro2").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoArea2").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoAreaPJ2").innerHTML = "Ou a soma da área de Porta(s) e/ou Janela(s) não pode ser maior que 50% da área da parede.";
+        document.getElementById("erroAvisoAreaSomaPJ2").innerHTML = "O m² da parede dividido por 2 é: " + (m2ParedeP2 / 2).toFixed(2) + "m²." + " A Soma das portas e/ou janelas é: "  + somaPeJ + "m²";
         document.getElementById("erroP2").innerHTML = "";
         document.getElementById("erroJ2").innerHTML = "";
         document.getElementById("erroPeJ2").innerHTML = "";
     }
-
-    
+ 
 }
 
 function calcParede3() {
@@ -194,26 +203,27 @@ function calcParede3() {
     var altura = parseFloat(document.getElementById("altura3").value);
     document.getElementById("alturaInput3").innerHTML = "ALTURA da parede: " + altura + "m";
 
-    m2Parede = parseFloat((comprimento * altura).toFixed(2));
-    document.getElementById("m2paredeResultado3").innerHTML = "m² da parede: " + m2Parede + "m²";
+    var m2ParedeP3 = parseFloat((comprimento * altura).toFixed(2));
+    document.getElementById("m2paredeResultado3").innerHTML = "m² da parede: " + m2ParedeP3 + "m²";
 
-    portas = parseInt(document.getElementById("p3portas").value);
-    janelas = parseInt(document.getElementById("p3janelas").value);
+    var portasP3 = parseInt(document.getElementById("p3portas").value);
+    var janelasP3 = parseInt(document.getElementById("p3janelas").value);
 
-    areaDasPortasEJanelas();
-    
-    if (m2Parede >= 1 && m2Parede <= 50 && (m2Parede / 2) > somaPeJ) {
-        m2ParedeMenosPeJ3 = parseFloat((m2Parede - (areaPorta + areaJanela)).toFixed(2));
+    areaDasPortasEJanelas(portasP3, janelasP3, m2ParedeP3);
 
-        comprimentoAlturaPortasJanelas()
+    m2ParedeMenosPeJ3 = parseFloat((m2ParedeP3 - (areaPorta + areaJanela)).toFixed(2));
+    var umlitroTinta5m2 = 5;
+    quantosLitros3 = parseFloat((m2ParedeMenosPeJ3 / umlitroTinta5m2).toFixed(2));
+
+    if (m2ParedeP3 >= 1 && m2ParedeP3 <= 50 && (m2ParedeP3 / 2) > somaPeJ) {
+
+        comprimentoAlturaPortasJanelas(portasP3, janelasP3)
         
-        if (comprimento > (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
-            var umlitroTinta5m2 = 5;
-            quantosLitros = parseFloat((m2ParedeMenosPeJ3 / umlitroTinta5m2).toFixed(2));
-            quantosLitros3 = quantosLitros;
-            document.getElementById("precisoDe3").innerHTML = "São necessários " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2ParedeMenosPeJ3 + "m² da parede";
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
+
+            document.getElementById("precisoDe3").innerHTML = "São necessários " + quantosLitros3 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ3 + "m² da parede";
             
-            calcLatas();
+            calcLatas(quantosLitros3);
             
             document.getElementById("lata18l3").innerHTML = "Numero de latas de 18L: " + latas18;
             document.getElementById("lata36l3").innerHTML = "Numero de latas de 3.6L: " + latas36;
@@ -223,7 +233,9 @@ function calcParede3() {
             document.getElementById("latas3").innerHTML = "Numero total de latas: " + latas;
             document.getElementById("erroAvisoP3").innerHTML = "";
             document.getElementById("erroAvisoJ3").innerHTML = "";
-            document.getElementById("erro3").innerHTML = "";
+            document.getElementById("erroAvisoArea3").innerHTML = "";
+            document.getElementById("erroAvisoAreaPJ3").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ3").innerHTML = "";
             document.getElementById("erroP3").innerHTML = "";
             document.getElementById("erroJ3").innerHTML = "";
             document.getElementById("erroPeJ3").innerHTML = "";
@@ -239,14 +251,14 @@ function calcParede3() {
             document.getElementById("latas3").innerHTML = "";
             document.getElementById("erroAvisoP3").innerHTML = "A altura mínima da parede, se houver porta, é de 2,20m (1,90m mais 0,30m).";
             document.getElementById("erroAvisoJ3").innerHTML = "A altura mínima da parede, se houver janela, é de 1,20m.";
-            document.getElementById("erro3").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoArea3").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoAreaPJ3").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ3").innerHTML = "";
             document.getElementById("erroP3").innerHTML = "O comprimento da(s) porta(s) foi: " + comprimentoDaPorta + "m";
             document.getElementById("erroJ3").innerHTML = "O comprimento da(s) janela(s) foi: " + comprimentoDaJanela + "m";
-            document.getElementById("erroPeJ3").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";
-            
+            document.getElementById("erroPeJ3").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";   
         }
 
-        
     }
     else {
         document.getElementById("precisoDe3").innerHTML = "";
@@ -258,7 +270,9 @@ function calcParede3() {
         document.getElementById("latas3").innerHTML = "";
         document.getElementById("erroAvisoP3").innerHTML = "";
         document.getElementById("erroAvisoJ3").innerHTML = "";
-        document.getElementById("erro3").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoArea3").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoAreaPJ3").innerHTML = "Ou a soma da área de Porta(s) e/ou Janela(s) não pode ser maior que 50% da área da parede.";
+        document.getElementById("erroAvisoAreaSomaPJ3").innerHTML = "O m² da parede dividido por 2 é: " + (m2ParedeP3 / 2).toFixed(2) + "m²." + " A Soma das portas e/ou janelas é: "  + somaPeJ + "m²";
         document.getElementById("erroP3").innerHTML = "";
         document.getElementById("erroJ3").innerHTML = "";
         document.getElementById("erroPeJ3").innerHTML = "";
@@ -273,26 +287,27 @@ function calcParede4() {
     var altura = parseFloat(document.getElementById("altura4").value);
     document.getElementById("alturaInput4").innerHTML = "ALTURA da parede: " + altura + "m";
 
-    m2Parede = parseFloat((comprimento * altura).toFixed(2));
-    document.getElementById("m2paredeResultado4").innerHTML = "m² da parede: " + m2Parede + "m²";
+    var m2ParedeP4 = parseFloat((comprimento * altura).toFixed(2));
+    document.getElementById("m2paredeResultado4").innerHTML = "m² da parede: " + m2ParedeP4 + "m²";
 
-    portas = parseInt(document.getElementById("p4portas").value);
-    janelas = parseInt(document.getElementById("p4janelas").value);
+    var portasP4 = parseInt(document.getElementById("p4portas").value);
+    var janelasP4 = parseInt(document.getElementById("p4janelas").value);
 
-    areaDasPortasEJanelas();
-    
-    if (m2Parede >= 1 && m2Parede <= 50 && (m2Parede / 2) > somaPeJ) {
-        m2ParedeMenosPeJ4 = parseFloat((m2Parede - (areaPorta + areaJanela)).toFixed(2));
+    areaDasPortasEJanelas(portasP4, janelasP4, m2ParedeP4);
 
-        comprimentoAlturaPortasJanelas()
+    m2ParedeMenosPeJ4 = parseFloat((m2ParedeP4 - (areaPorta + areaJanela)).toFixed(2));    
+    var umlitroTinta5m2 = 5;
+    quantosLitros4 = parseFloat((m2ParedeMenosPeJ4 / umlitroTinta5m2).toFixed(2));
+
+    if (m2ParedeP4 >= 1 && m2ParedeP4 <= 50 && (m2ParedeP4 / 2) > somaPeJ) {
+
+        comprimentoAlturaPortasJanelas(portasP4, janelasP4)
         
-        if (comprimento > (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
-            var umlitroTinta5m2 = 5;
-            quantosLitros = parseFloat((m2ParedeMenosPeJ4 / umlitroTinta5m2).toFixed(2));
-            quantosLitros4 = quantosLitros;
-            document.getElementById("precisoDe4").innerHTML = "São necessários " + quantosLitros + " litros de tinta\n" + "Para pintar " + m2ParedeMenosPeJ4 + "m² da parede";
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
+
+            document.getElementById("precisoDe4").innerHTML = "São necessários " + quantosLitros4 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ4 + "m² da parede";
             
-            calcLatas();
+            calcLatas(quantosLitros4);
 
             document.getElementById("lata18l4").innerHTML = "Numero de latas de 18L: " + latas18;
             document.getElementById("lata36l4").innerHTML = "Numero de latas de 3.6L: " + latas36;
@@ -302,7 +317,9 @@ function calcParede4() {
             document.getElementById("latas4").innerHTML = "Numero total de latas: " + latas;
             document.getElementById("erroAvisoP4").innerHTML = "";
             document.getElementById("erroAvisoJ4").innerHTML = "";
-            document.getElementById("erro4").innerHTML = "";
+            document.getElementById("erroAvisoArea4").innerHTML = "";
+            document.getElementById("erroAvisoAreaPJ4").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ4").innerHTML = "";
             document.getElementById("erroP4").innerHTML = "";
             document.getElementById("erroJ4").innerHTML = "";
             document.getElementById("erroPeJ4").innerHTML = "";
@@ -318,11 +335,12 @@ function calcParede4() {
             document.getElementById("latas4").innerHTML = "";
             document.getElementById("erroAvisoP4").innerHTML = "A altura mínima da parede, se houver porta, é de 2,20m (1,90m mais 0,30m).";
             document.getElementById("erroAvisoJ4").innerHTML = "A altura mínima da parede, se houver janela, é de 1,20m.";
-            document.getElementById("erro4").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoArea4").innerHTML = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
+            document.getElementById("erroAvisoAreaPJ4").innerHTML = "";
+            document.getElementById("erroAvisoAreaSomaPJ4").innerHTML = "";
             document.getElementById("erroP4").innerHTML = "O comprimento da(s) porta(s) foi: " + comprimentoDaPorta + "m";
             document.getElementById("erroJ4").innerHTML = "O comprimento da(s) janela(s) foi: " + comprimentoDaJanela + "m";
-            document.getElementById("erroPeJ4").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";
-            
+            document.getElementById("erroPeJ4").innerHTML = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";    
         }
 
     }
@@ -336,7 +354,9 @@ function calcParede4() {
         document.getElementById("latas4").innerHTML = "";
         document.getElementById("erroAvisoP4").innerHTML = "";
         document.getElementById("erroAvisoJ4").innerHTML = "";
-        document.getElementById("erro4").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoArea4").innerHTML = "A área da parede não pode ser menor que 1m² ou maior que 50m²";
+        document.getElementById("erroAvisoAreaPJ4").innerHTML = "Ou a soma da área de Porta(s) e/ou Janela(s) não pode ser maior que 50% da área da parede.";
+        document.getElementById("erroAvisoAreaSomaPJ4").innerHTML = "O m² da parede dividido por 2 é: " + (m2ParedeP4 / 2).toFixed(2) + "m²." + " A Soma das portas e/ou janelas é: "  + somaPeJ + "m²";
         document.getElementById("erroP4").innerHTML = "";
         document.getElementById("erroJ4").innerHTML = "";
         document.getElementById("erroPeJ4").innerHTML = "";
@@ -344,7 +364,7 @@ function calcParede4() {
     
 }
 
-function areaDasPortasEJanelas() {
+function areaDasPortasEJanelas(portas, janelas, m2Parede) {
     /**
     * A a metragem da porta e da janela são fixas:
     * Porta: 0,80m comprimento X 1,90m altura - Área de 1,52m²
@@ -357,7 +377,7 @@ function areaDasPortasEJanelas() {
     console.log("m2 da parede dividido por 2: " + (m2Parede / 2));
 }
 
-function comprimentoAlturaPortasJanelas() {
+function comprimentoAlturaPortasJanelas(portas, janelas) {
     comprimentoDaPorta = portas * 0.80;
     alturaDaPorta = 1.90;
     if (portas == 0) {
@@ -370,14 +390,14 @@ function comprimentoAlturaPortasJanelas() {
     }
 }
 
-function calcLatas() {
+function calcLatas(quantosLitros) {
     latas = 0;
     latas18 = 0;
     latas36 = 0;
     latas25 = 0;
     latas05 = 0;
     latasAbaixoDe05 = 0;
-    while (quantosLitros != 0) {
+    while (quantosLitros > 0) {
 
         if(quantosLitros >= 18.00) {
             quantosLitros = quantosLitros - 18.00;
@@ -408,47 +428,14 @@ function calcLatas() {
 }
 
 function total() {
-    quantosLitrost = (quantosLitros1 + quantosLitros2 + quantosLitros3 + quantosLitros4);
-    latas = 0;
-    latas18 = 0;
-    latas36 = 0;
-    latas25 = 0;
-    latas05 = 0;
-    latasAbaixoDe05 = 0;
-    while (quantosLitrost != 0) {
-
-        if(quantosLitrost >= 18.00) {
-            quantosLitrost = quantosLitrost - 18.00;
-            latas++;
-            latas18++;
-        }
-        else if(quantosLitrost >= 3.60) {
-            quantosLitrost = quantosLitrost - 3.60;
-            latas++;
-            latas36++;
-        }
-        else if(quantosLitrost >= 2.50) {
-            quantosLitrost = quantosLitrost - 2.50;
-            latas++;
-            latas25++;
-        }
-        else if(quantosLitrost >= 0.50) {
-            quantosLitrost = quantosLitrost - 0.50;
-            latas++;
-            latas05++;
-        }
-        else if(quantosLitrost < 0.50) {
-            quantosLitrost = 0;
-            latas++;
-            latasAbaixoDe05++;
-        }
-    }
-    latast = latas;
-    latas18t = latas18;
-    latas36t = latas36;
-    latas25t = latas25;
-    latas05t = latas05;
-    latasAbaixoDe05t = latasAbaixoDe05;
+    var quantosLitrost = parseFloat((quantosLitros1 + quantosLitros2 + quantosLitros3 + quantosLitros4).toFixed(2));
+    calcLatas(quantosLitrost);
+    document.getElementById("lata18lt").innerHTML = "Numero de latas de 18L: " + latas18;
+    document.getElementById("lata36lt").innerHTML = "Numero de latas de 3.6L: " + latas36;
+    document.getElementById("lata25lt").innerHTML = "Numero de latas de 2.5L: " + latas25;
+    document.getElementById("lata05lt").innerHTML = "Numero de latas de 0.5L: " + latas05;
+    document.getElementById("lata0lt").innerHTML = "Numero de latas adicionais de 0.5L: " + latasAbaixoDe05;
+    document.getElementById("latast").innerHTML = "Numero total de latas: " + latas;
 }
 
 function calcula() {
@@ -456,12 +443,6 @@ function calcula() {
     calcParede2();
     calcParede3();
     calcParede4();
+    document.getElementById("total").innerHTML = "São necessários " + (quantosLitros1 + quantosLitros2 + quantosLitros3 + quantosLitros4).toFixed(2) + " litros de tinta " + "Para pintar " + (m2ParedeMenosPeJ1 + m2ParedeMenosPeJ2 + m2ParedeMenosPeJ3 + m2ParedeMenosPeJ4).toFixed(2) + "m² das Paredes";
     total();
-    document.getElementById("total").innerHTML = "São necessários " + (quantosLitros1 + quantosLitros2 + quantosLitros3 + quantosLitros4) + " litros de tinta" + "Para pintar " + (m2ParedeMenosPeJ1 + m2ParedeMenosPeJ2 + m2ParedeMenosPeJ3 + m2ParedeMenosPeJ4).toFixed(2) + "m² das Paredes";
-    document.getElementById("lata18lt").innerHTML = "Numero de latas de 18L: " + latast;
-    document.getElementById("lata36lt").innerHTML = "Numero de latas de 3.6L: " + latas36t;
-    document.getElementById("lata25lt").innerHTML = "Numero de latas de 2.5L: " + latas25t;
-    document.getElementById("lata05lt").innerHTML = "Numero de latas de 0.5L: " + latas05t;
-    document.getElementById("lata0lt").innerHTML = "Numero de latas adicionais de 0.5L: " + latasAbaixoDe05t;
-    document.getElementById("latast").innerHTML = "Numero total de latas: " + latast;
 }
