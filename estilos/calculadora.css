@@ -14,19 +14,19 @@
     margin-bottom: 1rem;
 }
 
-.parede1__entrada, .parede2__entrada {
+.parede1__entrada, .parede2__entrada, .parede3__entrada, .parede4__entrada {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
 
 
-.p1entrada__label, .p2entrada__label {
+.p1entrada__label, .p2entrada__label, .p3entrada__label, .p4entrada__label {
     font-size: 1.125rem;
     margin-bottom: 0.2rem;
 }
 
-.p1entrada__input, .p2entrada__input {
+.p1entrada__input, .p2entrada__input, .p3entrada__input, .p4entrada__input {
     width: 100%;
     height: 2.375rem;
     box-sizing: border-box;
@@ -38,7 +38,7 @@
 
 }
 
-.p1resultado__inner, .p2resultado__inner {
+.p1resultado__inner, .p2resultado__inner, .p3resultado__inner, .p4resultado__inner {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }

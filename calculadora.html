@@ -28,22 +28,24 @@
     </header>
     <main class="calculadora">
         <section class="paredes">
-            <h1 class="paredes__titulo">Calculadora de Tintas</h1>
-            <p class="paredes__texto">Calcula entre 1m² a 50m² de área de cada parede, se houver porta(s) e/ou janela(s) a área destas não pode ser superior a 50% da área da parede.</p>
+            <div class="paredes__apresentacao">
+                <h1 class="paredes__titulo">Calculadora de Tintas</h1>
+                <p class="paredes__texto">Calcula entre 1m² a 50m² de área de cada parede, se houver porta(s) e/ou janela(s) a área destas não pode ser superior a 50% da área da parede.</p>
+            </div>
             <div class="parede1__entrada">
                 <label for="comprimento" class="p1entrada__label">Comprimento da parede 1 em metros</label>
-                <input type="number" class="p1entrada__input" id="comprimento" name="comprimento" value="" placeholder="ex: 3" required>
+                <input type="number" class="p1entrada__input" id="comprimento" name="comprimento" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="altura" class="p1entrada__label">Altura da parede 1 em metros</label>
-                <input type="number" class="p1entrada__input" id="altura" name="altura" value="" placeholder="ex: 2.10" required>
+                <input type="number" class="p1entrada__input" id="altura" name="altura" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="p1portas" class="p1entrada__label">Quantas Portas?</label>
                 <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
-                <input type="number" class="p1entrada__input" id="p1portas" name="portas" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+                <input type="number" class="p1entrada__input" id="p1portas" name="portas1" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
 
                 <label for="p1janelas" class="p1entrada__label">Quantas Janelas?</label>
                 <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
-                <input type="number" class="p1entrada__input" id="p1janelas" name="janelas" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+                <input type="number" class="p1entrada__input" id="p1janelas" name="janelas1" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
 
                 <div class="parede1__resultado">
                     <h2 id="compInput" class="p1resultado__inner"></h2>
@@ -56,16 +58,29 @@
                     <h2 id="lata05l" class="p1resultado__inner"></h2>
                     <h2 id="lata0l" class="p1resultado__inner"></h2>
                     <h2 id="latas" class="p1resultado__inner"></h2>
-                    <h2 id="erro" class="p1resultado__inner erro1"></h2>
+                    <h2 id="erro" class="p1resultado__inner"></h2>
+                    <h2 id="erroP" class="p1resultado__inner"></h2>
+                    <h2 id="erroJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroPeJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoP" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoJ" class="p1resultado__inner"></h2>
                 </div>
             </div>
 
             <div class="parede2__entrada">
                 <label for="comprimento2" class="p2entrada__label">Comprimento da parede 2 em metros</label>
-                <input type="number" class="p2entrada__input" id="comprimento2" name="comprimento2" value="" placeholder="ex: 3" required>
+                <input type="number" class="p2entrada__input" id="comprimento2" name="comprimento2" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
 
                 <label for="altura2" class="p2entrada__label">Altura da parede 2 em metros</label>
-                <input type="number" class="p2entrada__input" id="altura2" name="altura2" value="" placeholder="ex: 2.10" required>
+                <input type="number" class="p2entrada__input" id="altura2" name="altura2" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p2portas" class="p2entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p2entrada__input" id="p2portas" name="portas2" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p2janelas" class="p2entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p2entrada__input" id="p2janelas" name="janelas2" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
 
                 <div class="parede2__resultado">
                     <h2 id="compInput2" class="p2resultado__inner"></h2>
@@ -79,31 +94,97 @@
                     <h2 id="lata0l2" class="p2resultado__inner"></h2>
                     <h2 id="latas2" class="p2resultado__inner"></h2>
                     <h2 id="erro2" class="p2resultado__inner"></h2>
+                    <h2 id="erroP2" class="p2resultado__inner"></h2>
+                    <h2 id="erroJ2" class="p2resultado__inner"></h2>
+                    <h2 id="erroPeJ2" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoP2" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoJ2" class="p2resultado__inner"></h2>
                 </div>
             </div>
-                
-            <input type="button" class="p1entrada__botao" onclick="calcula()" value="Calcule" id="calcule">
-            
+
+            <div class="parede3__entrada">
+                <label for="comprimento3" class="p3entrada__label">Comprimento da parede 3 em metros</label>
+                <input type="number" class="p3entrada__input" id="comprimento3" name="comprimento3" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="altura3" class="p3entrada__label">Altura da parede 3 em metros</label>
+                <input type="number" class="p3entrada__input" id="altura3" name="altura3" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p3portas" class="p3entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p3entrada__input" id="p3portas" name="portas3" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p3janelas" class="p3entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p3entrada__input" id="p3janelas" name="janelas3" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede3__resultado">
+                    <h2 id="compInput3" class="p2resultado__inner"></h2>
+                    <h2 id="alturaInput3" class="p2resultado__inner"></h2>
+                    <h2 id="m2paredeResultado3" class="p2resultado__inner"></h2>
+                    <h2 id="precisoDe3" class="p3resultado__inner"></h2>
+                    <h2 id="lata18l3" class="p3resultado__inner"></h2>
+                    <h2 id="lata36l3" class="p3resultado__inner"></h2>
+                    <h2 id="lata25l3" class="p3resultado__inner"></h2>
+                    <h2 id="lata05l3" class="p3resultado__inner"></h2>
+                    <h2 id="lata0l3" class="p3resultado__inner"></h2>
+                    <h2 id="latas3" class="p3resultado__inner"></h2>
+                    <h2 id="erro3" class="p3resultado__inner"></h2>
+                    <h2 id="erroP3" class="p3resultado__inner"></h2>
+                    <h2 id="erroJ3" class="p3resultado__inner"></h2>
+                    <h2 id="erroPeJ3" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoP3" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoJ3" class="p3resultado__inner"></h2>
+                </div>
+            </div>
+
+            <div class="parede4__entrada">
+                <label for="comprimento4" class="p4entrada__label">Comprimento da parede 4 em metros</label>
+                <input type="number" class="p4entrada__input" id="comprimento4" name="comprimento4" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="altura4" class="p4entrada__label">Altura da parede 4 em metros</label>
+                <input type="number" class="p4entrada__input" id="altura4" name="altura4" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p4portas" class="p4entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p4entrada__input" id="p4portas" name="portas4" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p4janelas" class="p4entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p4entrada__input" id="p4janelas" name="janelas4" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede4__resultado">
+                    <h2 id="compInput4" class="p2resultado__inner"></h2>
+                    <h2 id="alturaInput4" class="p2resultado__inner"></h2>
+                    <h2 id="m2paredeResultado4" class="p2resultado__inner"></h2>
+                    <h2 id="precisoDe4" class="p4resultado__inner"></h2>
+                    <h2 id="lata18l4" class="p4resultado__inner"></h2>
+                    <h2 id="lata36l4" class="p4resultado__inner"></h2>
+                    <h2 id="lata25l4" class="p4resultado__inner"></h2>
+                    <h2 id="lata05l4" class="p4resultado__inner"></h2>
+                    <h2 id="lata0l4" class="p4resultado__inner"></h2>
+                    <h2 id="latas4" class="p4resultado__inner"></h2>
+                    <h2 id="erro4" class="p4resultado__inner"></h2>
+                    <h2 id="erroP4" class="p4resultado__inner"></h2>
+                    <h2 id="erroJ4" class="p4resultado__inner"></h2>
+                    <h2 id="erroPeJ4" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoP4" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoJ4" class="p4resultado__inner"></h2>
+                </div>
+            </div>
 
             <div class="parede__resultado">
-				<h2 id="compInput" class="p1resultado__inner"></h2>
-				<h2 id="alturaInput" class="p1resultado__inner"></h2>
-                <h2 id="m2paredeResultado" class="p1resultado__inner"></h2>
-                <h2 id="precisoDe" class="p1resultado__inner"></h2>
-                <h2 id="lata18l" class="p1resultado__inner"></h2>
-                <h2 id="lata36l" class="p1resultado__inner"></h2>
-                <h2 id="lata25l" class="p1resultado__inner"></h2>
-                <h2 id="lata05l" class="p1resultado__inner"></h2>
-                <h2 id="lata0l" class="p1resultado__inner"></h2>
-                <h2 id="latas" class="p1resultado__inner"></h2>
-                <h2 id="erro" class="p1resultado__inner"></h2>
+				<h2 id="total" class="p1resultado__inner"></h2>
+                <h2 id="lata18lt" class="p4resultado__inner"></h2>
+                <h2 id="lata36lt" class="p4resultado__inner"></h2>
+                <h2 id="lata25lt" class="p4resultado__inner"></h2>
+                <h2 id="lata05lt" class="p4resultado__inner"></h2>
+                <h2 id="lata0lt" class="p4resultado__inner"></h2>
+                <h2 id="latast" class="p4resultado__inner"></h2>
 			</div>
-
+                
+            <input type="submit" class="p1entrada__botao" onclick="calcula()" value="Calcule" id="calcule">
         </section>
         
-
-        
-
 
     </main>
 
