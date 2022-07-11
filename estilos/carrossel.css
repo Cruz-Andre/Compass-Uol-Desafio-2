@@ -24,7 +24,7 @@
     border-radius: 15px;
     margin: 0 1rem;
     color: var(--preto);
-    background: var(--cor-de-fundo-transparente);
+    background: var(--cor-de-fundo-contato);
     font-family: var(--fonte-secundaria);
 }
 
@@ -50,7 +50,7 @@
     --bs-btn-disabled-color: var(--preto);
     --bs-btn-disabled-bg: var(--cor-de-fundo);
     --bs-btn-disabled-border-color: var(--cor-de-fundo2);
-    font-weight: 500;
+    font-weight: 600;
 } 
 
 
