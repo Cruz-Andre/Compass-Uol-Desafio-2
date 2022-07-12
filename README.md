@@ -63,8 +63,8 @@ altura da porta.
 - [x] Mostrar que a parede não pode ter menos que 1m² e mais que 50m² quando o usuário digita os dados que aferem o resultado
 - [x] condição para colocar porta(s) e/ou janela(s) e cada uma das paredes.
 - [x] condição que a soma das áreas das porta(s) e/ou janela(s) não seja maior que 50% da área da parede.
-- [ ] testar os calculos. ...testando
-- [ ] testar a lógica (I/O). ...testando
+- [x] testar os calculos. ...testando
+- [x] testar a lógica (I/O). ...testando
 - [x] comentar o código. ...comentando
 - [x] arrumar formatação dos textos
 
