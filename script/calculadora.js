@@ -29,34 +29,80 @@
  *      o 18 L
  */
 
+/**
+ * Função da 1ª parede. 
+ * Devido ao meu conhecimento básico em programação, esse foi o máximo possivel de otimização do código.
+ * 
+ */
 function calcParede1() {
+    /**
+     * Pega o input do usuário para o comprimento altura da 1ª parede
+     * e mostra na tela os valores digitados.
+     */
     var comprimento = parseFloat(document.getElementById("comprimento").value);
     document.getElementById("compInput").innerHTML = "COMPRIMENTO da parede: " + comprimento + "m";
 
     var altura = parseFloat(document.getElementById("altura").value);
     document.getElementById("alturaInput").innerHTML = "ALTURA da parede: " + altura + "m";
 
+    /**
+     * Calcula a área da parede e mostra na tela o resultado.
+     */
     var m2ParedeP1 = parseFloat((comprimento * altura).toFixed(2));
     document.getElementById("m2paredeResultado").innerHTML = "m² da parede: " + m2ParedeP1 + "m²";
 
+    /**
+     * Pega o input do usuário para a quantidade de portas e janelas
+     */
     var portasP1 = parseInt(document.getElementById("p1portas").value);
     var janelasP1 = parseInt(document.getElementById("p1janelas").value);
 
+    /**
+     * Chama a função que soma a área das portas e janelas de acordo com a quantidade escolhida pelo usuário.
+     * o terceido parametro é para o console.log, controle interno durante a construção do código, para
+     * comparar a área da parede com a área das portas e janelas.
+     */
     areaDasPortasEJanelas(portasP1, janelasP1, m2ParedeP1);
-    
+ 
+    /**
+     * Calcula a área da parede que realmente será pintada, e
+     * calcula a quantidade de tinta necessária para pintar a parede.
+     */
     m2ParedeMenosPeJ1 = parseFloat((m2ParedeP1 - (areaPorta + areaJanela)).toFixed(2));
     var umlitroTinta5m2 = 5;
     quantosLitros1 = parseFloat((m2ParedeMenosPeJ1 / umlitroTinta5m2).toFixed(2));
-    
+ 
+    /**
+     * Condição para verificar se a área da parede está entre 1m² a 50m² e
+     * 50% da área da parede é maior que a soma das áreas de portas e janelas.
+     */
     if (m2ParedeP1 >= 1 && m2ParedeP1 <= 50 && (m2ParedeP1 / 2) > somaPeJ) {
 
+        /**
+         * Chama a função que calcula o comprimento e a altura das portas e janelas.
+         * de acordo com a quantidade escolhida pelo usuário
+         */
         comprimentoAlturaPortasJanelas(portasP1, janelasP1)
-        
-        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
+  
+        /**
+         * Condição para verificar se o comprimento e altura da parede é maior que
+         * o comprimento e altura das portas e janelas.
+         */
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura >= alturaDaJanela) {
 
+            /**
+             * Mostra na tela a quantidade de litros necessária para pintar a área da parede.
+             */
             document.getElementById("precisoDe").innerHTML = "São necessários " + quantosLitros1 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ1 + "m² da parede";
+            
+            /**
+             * Chama a função que calcula as latas que o usuário deve usar e a quantidade de latas
+             */
             calcLatas(quantosLitros1);
             
+            /**
+             * Mostra na tela as latas que o usuário deve usar e a quantidade de latas
+             */
             document.getElementById("lata18l").innerHTML = "Numero de latas de 18L: " + latas18;
             document.getElementById("lata36l").innerHTML = "Numero de latas de 3.6L: " + latas36;
             document.getElementById("lata25l").innerHTML = "Numero de latas de 2.5L: " + latas25;
@@ -73,7 +119,14 @@ function calcParede1() {
             document.getElementById("erroPeJ").innerHTML = "";
             
         }
-        else {        
+        /**
+         * Condição senão, caso o comprimento ou a altura da parede seja menor que
+         * o comprimento e altura das portas e/ou janelas
+         */
+        else {
+            /**
+             * Mostra na tela o aviso ao usuário.
+             */        
             document.getElementById("precisoDe").innerHTML = "";
             document.getElementById("lata18l").innerHTML = "";
             document.getElementById("lata36l").innerHTML = "";
@@ -92,7 +145,14 @@ function calcParede1() {
         }
  
     }
+    /**
+     * Condição senão, caso a área da parede seja menor que 1m² ou maior que 50m² e/ou
+     * 50% da área da parede seja menor que a soma das áreas de portas e janelas.
+     */
     else {
+        /**
+         * Mostra na tela o aviso ao usário
+         */
         document.getElementById("precisoDe").innerHTML = "";
         document.getElementById("lata18l").innerHTML = "";
         document.getElementById("lata36l").innerHTML = "";
@@ -112,6 +172,7 @@ function calcParede1() {
     
 }
 
+/**idem ao comentário da parede 1 */
 function calcParede2() {
     var comprimento = parseFloat(document.getElementById("comprimento2").value);
     document.getElementById("compInput2").innerHTML = "COMPRIMENTO da parede: " + comprimento + "m";
@@ -135,7 +196,7 @@ function calcParede2() {
 
         comprimentoAlturaPortasJanelas(portasP2, janelasP2)
         
-        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura >= alturaDaJanela) {
             
             document.getElementById("precisoDe2").innerHTML = "São necessários " + quantosLitros2 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ2 + "m² da parede";
             
@@ -196,6 +257,7 @@ function calcParede2() {
  
 }
 
+/**idem ao comentário da parede 1 */
 function calcParede3() {
     var comprimento = parseFloat(document.getElementById("comprimento3").value);
     document.getElementById("compInput3").innerHTML = "COMPRIMENTO da parede: " + comprimento + "m";
@@ -219,7 +281,7 @@ function calcParede3() {
 
         comprimentoAlturaPortasJanelas(portasP3, janelasP3)
         
-        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura >= alturaDaJanela) {
 
             document.getElementById("precisoDe3").innerHTML = "São necessários " + quantosLitros3 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ3 + "m² da parede";
             
@@ -280,6 +342,7 @@ function calcParede3() {
     
 }
 
+/**idem ao comentário da parede 1 */
 function calcParede4() {
     var comprimento = parseFloat(document.getElementById("comprimento4").value);
     document.getElementById("compInput4").innerHTML = "COMPRIMENTO da parede: " + comprimento + "m";
@@ -303,7 +366,7 @@ function calcParede4() {
 
         comprimentoAlturaPortasJanelas(portasP4, janelasP4)
         
-        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura > alturaDaJanela) {
+        if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura >= alturaDaJanela) {
 
             document.getElementById("precisoDe4").innerHTML = "São necessários " + quantosLitros4 + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ4 + "m² da parede";
             
@@ -364,6 +427,13 @@ function calcParede4() {
     
 }
 
+/** 
+ * A função calcula a área das portas e janelas de 
+ * acordo com a quantidade definida pelo usuário.
+ * Soma a as áreas das portas e janelas.
+ * O terceido parametro é para o console.log, controle interno durante a construção do código, para
+ * comparar a área da parede com a soma da área das portas e janelas.
+ */
 function areaDasPortasEJanelas(portas, janelas, m2Parede) {
     /**
     * A a metragem da porta e da janela são fixas:
@@ -377,19 +447,37 @@ function areaDasPortasEJanelas(portas, janelas, m2Parede) {
     console.log("m2 da parede dividido por 2: " + (m2Parede / 2));
 }
 
+/**
+ * Função que calcula o comprimento da porta de acordo com a quantidade definida pelo usuário.
+ * A altura da porta é fixa, a condicional define se não for escolhido uma porta
+ * a altura dela será 0, afinal não importa a quantidade, a altura
+ * da porta é uma só. Isso impede que seja colocado uma porta em cima da outra.
+ * 
+ * No caso da Janela o comprimento e altura são fixos pois as
+ * janelas cabem uma em cima da outra e uma do lado da outra.
+ * a quantidade de janelas será definida pela sua área total.
+ * Condicional apenas para caso não for escolhida um janela.
+ */
 function comprimentoAlturaPortasJanelas(portas, janelas) {
     comprimentoDaPorta = portas * 0.80;
     alturaDaPorta = 1.90;
     if (portas == 0) {
         alturaDaPorta = 0;
     }
-    comprimentoDaJanela = janelas * 2.00;
+
+    comprimentoDaJanela = 2.00;
     alturaDaJanela = 1.20;
     if (janelas == 0) {
         alturaDaJanela = 0;
+        comprimentoDaJanela = 0;
     }
 }
 
+/** 
+ * Funçao que calcula as latas a serem usadas sempre priorizando a maior lata de acordo
+ * com a quantidade de litros de tinta necessários para pintar a parede.
+ * calcula também a quantidade de latas e o total de latas.
+*/
 function calcLatas(quantosLitros) {
     latas = 0;
     latas18 = 0;
@@ -419,6 +507,11 @@ function calcLatas(quantosLitros) {
             latas++;
             latas05++;
         }
+
+        /**
+         * Como nem sempre a quantidade de litros de tinta será um numero exato (as vezes sobrará menos de 0.5 litros)
+         * é necessário um adicional de latas de 0.5 litros para fechar o resto.
+         */
         else if(quantosLitros < 0.50) {
             quantosLitros = 0;
             latas++;
@@ -427,6 +520,12 @@ function calcLatas(quantosLitros) {
     }
 }
 
+/**
+ * Função que calcula o Total da área das paredes, o total de litros e motra ao usuário quais latas
+ * necessárias e quantas latas.
+ * foi necessário usar quatro variáveis globais (uma de cada parede e com nome diferente, relacionado ao nº 
+ * da parede) para fazer o calculo.
+ */
 function total() {
     var quantosLitrost = parseFloat((quantosLitros1 + quantosLitros2 + quantosLitros3 + quantosLitros4).toFixed(2));
     calcLatas(quantosLitrost);
@@ -438,6 +537,11 @@ function total() {
     document.getElementById("latast").innerHTML = "Numero total de latas: " + latas;
 }
 
+/**
+ * A função que chama todas as outras funções e mostra na tela o
+ * Total de litros necessarios e o total da área das paredes tirando 
+ * o total da área de portas e janelas
+ */
 function calcula() {
     calcParede1();
     calcParede2();
