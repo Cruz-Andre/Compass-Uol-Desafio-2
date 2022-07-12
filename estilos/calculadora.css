@@ -3,6 +3,7 @@
     margin: 0 auto;
 }
 
+
 .paredes {
     background-color: var(--cor-de-fundo-contato);
     border-radius: 15px;
@@ -10,24 +11,26 @@
     margin-bottom: 1rem;
 }
 
+
 .paredes__titulo {
     font-size: 2rem;
     text-align: center;
 }
 
+
 .paredes__texto {
     margin: 1rem 0 1rem 0;
     text-align: justify;
     line-height: 1.3rem;
-
-
 }
+
 
 .parede1__entrada, .parede2__entrada, .parede3__entrada, .parede4__entrada {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
+
 
 span p {
     font-size: 0.9rem;
@@ -38,6 +41,7 @@ span p {
     font-size: 1.125rem;
     margin-bottom: 0.2rem;
 }
+
 
 .p1entrada__input, .p2entrada__input, .p3entrada__input, .p4entrada__input {
     width: 100%;
@@ -51,16 +55,19 @@ span p {
 
 }
 
+
 .p1resultado__inner, .p2resultado__inner, .p3resultado__inner, .p4resultado__inner, .total__inner {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }
+
 
 .totais__inner {
     text-align: center;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
+
 
 .parede__botao {
     display: block;
@@ -74,6 +81,7 @@ span p {
     font-size: 20px;
 }
 
+
 .parede__botao:hover {
     background: var(--cor-de-fundo2);
     border-color: var(--cor-de-fundo);
@@ -85,6 +93,7 @@ span p {
         max-width: 540px;
     }
 } 
+
 
 @media (min-width: 763px) {
     .calculadora {

@@ -1,4 +1,4 @@
-/*   Uma aplicação web ou mobile que ajude o usuário a calcular a quantidade de tinta
+/*   Uma aplicação web que ajude o usuário a calcular a quantidade de tinta
  *   necessária para pintar uma sala. Essa aplicação deve considerar que a sala é
  *   composta de 4 paredes e deve permitir que o usuário escolha qual a medida de cada
  *   parede e quantas janelas e portas possuem cada parede. Com base na quantidade

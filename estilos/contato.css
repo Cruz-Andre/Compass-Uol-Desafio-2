@@ -3,12 +3,14 @@
     margin: 0 auto;
 }
 
+
 .contato__titulo {
     background-color: var(--cor-de-fundo-contato);
     border-radius: 15px;
     padding: 0.5rem;
     margin-bottom: 1rem;
 }
+
 
 .contato__titulo h1 {
     font-size: 1.5rem;
@@ -17,11 +19,13 @@
     margin-bottom: 1rem;
 }
 
+
 .contato__titulo p {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
 }
+
 
 .formulario {
     background-color: var(--cor-de-fundo-contato);
@@ -30,15 +34,18 @@
     margin-bottom: 1rem;
 }
 
+
 .formulario__infos {
     display: flex;
     flex-direction: column;
 }
 
+
 .formulario__label-infos {
     font-size: 1.125rem;
     margin-bottom: 0.2rem;
 }
+
 
 .formulario__input-infos {
     width: 100%;
@@ -51,6 +58,7 @@
     padding: 0.5rem;
 }
 
+
 .formulario__radio {
     display: flex;
     flex-direction: column;
@@ -58,18 +66,22 @@
     margin-bottom: 0.5rem;
 }
 
+
 .formulario__radio-legend {
     margin-bottom: 0.2rem;
 }
+
 
 .formulario__radio-label {
     margin-bottom: 0.5rem;
 }
 
+
 .formulario__texto-legend {
     margin: 1rem 0 0.2rem 0;
     font-size: 1.125rem;
 }
+
 
 .formulario__texto-area {
     min-height: 120px;
@@ -83,6 +95,7 @@
     resize: vertical;
 }
 
+
 .botao {
     display: block;
     margin: 0 auto;
@@ -95,16 +108,19 @@
     font-size: 20px;
 }
 
+
 .botao:hover {
     background: var(--cor-de-fundo2);
     border-color: var(--cor-de-fundo);
 }
+
 
 @media (min-width: 576px) {
     .contato {
         max-width: 540px;
     }
 } 
+
 
 @media (min-width: 763px) {
     .contato {

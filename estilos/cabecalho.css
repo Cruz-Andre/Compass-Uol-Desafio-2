@@ -48,6 +48,7 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
     width: 100%;
 }
 
+
 /*  ~ combinador (irmão geral) OU + combinador (irmão próximo) para abrir o menu */
 .cabecalho__botao:checked ~ .cabecalho__lista {
     display: flex;
@@ -65,6 +66,7 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
 .cabecalho__item {
     margin: 10px 10px;
 }
+
 
 .cabecalho__item-link {
     font-size: 1.5rem;
@@ -85,6 +87,7 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
     width: 24px;
     height: 24px;
 }
+
 
 /* Para telas maiores que 763px */
 @media screen and (min-width: 763px) {
@@ -108,6 +111,7 @@ selecinar a classe .cabecalho__menu-hamburquer onde está a imagem. */
         position: inherit;
         width: auto;
     }
+
 
 /* evita o movimento de transition quando girar um celular ou tablet com a largura maior que 763px */
     .cabecalho__botao:checked ~ .cabecalho__lista {
