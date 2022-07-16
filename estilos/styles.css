@@ -22,6 +22,11 @@
     --bs-body-color: none;
 }
 
+/* Rolagem das páginas suave. */
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* Medida padrao paizao de todos */
 body {
