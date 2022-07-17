@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/styles.css">
+    <title>Calculadora de Tintas</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <input type="checkbox" id="menu" class="cabecalho__botao">
+                <label for="menu" class="cabecalho__label">
+                    <span class="cabecalho__menu-hamburguer"></span>
+                </label>
+            <ul class="cabecalho__lista">
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="index.html">Home</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link cabecalho__item-link-ativo" href="calculadora.html">Calculadora de Tinta</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="contato.html">Contato</a></li>
+                <li class="cabecalho__item"><a class="cabecalho__item-link" href="#">Compre</a></li>
+            </ul>
+            <h1 class="cabecalho__menu-titulo">Tintas Pinta</h1>
+            <a href="#" class="cabecalho__"><img src="img/carrinho.svg" title="Carrinho de Compras" alt="carrinho de compras" class="cabecalho__carrinho"></a>
+        </nav>
+    </header>
+    
+    <main class="calculadora">
+        <section class="paredes">
+            <div class="paredes__apresentacao">
+                <h1 class="paredes__titulo">Calculadora de Tintas</h1>
+                <p class="paredes__texto">1) Calcula entre 1m² a 50m² de área de cada parede, se houver porta(s) e/ou janela(s) a área destas não pode ser superior a 50% da área da parede.</p>
+                <p class="paredes__texto">2) O cálculo mostra a quantidade de litros de tinta necessário para pintar cada parede e o total de todas as paredes.</p>
+                <p class="paredes__texto">3) A calculadora prioriza a lata de tinta de maior quantidade na hora de oferecer qual lata comprar.</p>
+                <p class="paredes__texto">4) 1 litro de tinta é capaz de pintar 5m² da parede</p>
+                <p class="paredes__texto">5) A calculadora mostra avisos se os valores são conflitantes.</p>
+            </div>
+            <div class="parede__entrada">
+                <label for="comprimento" class="p1entrada__label">Comprimento da 1ª parede em metros</label>
+                <input type="number" class="p1entrada__input" id="comprimento" name="comprimento" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="altura" class="p1entrada__label">Altura da 1ª parede em metros</label>
+                <input type="number" class="p1entrada__input" id="altura" name="altura" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p1portas" class="p1entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p1entrada__input" id="portas" name="portas1" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p1janelas" class="p1entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p1entrada__input" id="janelas" name="janelas1" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede1__resultado">
+                    <h2 id="compInput" class="p1resultado__inner"></h2>
+                    <h2 id="alturaInput" class="p1resultado__inner"></h2>
+                    <h2 id="m2paredeResultado" class="p1resultado__inner"></h2>
+                    <h2 id="precisoDe" class="p1resultado__inner"></h2>
+                    <h2 id="lata18l" class="p1resultado__inner"></h2>
+                    <h2 id="lata36l" class="p1resultado__inner"></h2>
+                    <h2 id="lata25l" class="p1resultado__inner"></h2>
+                    <h2 id="lata05l" class="p1resultado__inner"></h2>
+                    <h2 id="lata0l" class="p1resultado__inner"></h2>
+                    <h2 id="latas" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoArea" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroP" class="p1resultado__inner"></h2>
+                    <h2 id="erroJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroPeJ" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoP" class="p1resultado__inner"></h2>
+                    <h2 id="erroAvisoJ" class="p1resultado__inner"></h2>
+                </div>
+            </div>
+
+            <div class="parede__entrada">
+                <label for="comprimento2" class="p2entrada__label">Comprimento da 2ª parede em metros</label>
+                <input type="number" class="p2entrada__input" id="comprimento" name="comprimento2" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="altura2" class="p2entrada__label">Altura da 2ª parede em metros</label>
+                <input type="number" class="p2entrada__input" id="altura" name="altura2" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p2portas" class="p2entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p2entrada__input" id="portas" name="portas2" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p2janelas" class="p2entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p2entrada__input" id="janelas" name="janelas2" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede2__resultado">
+                    <h2 id="compInput" class="p2resultado__inner"></h2>
+                    <h2 id="alturaInput" class="p2resultado__inner"></h2>
+                    <h2 id="m2paredeResultado" class="p2resultado__inner"></h2>
+                    <h2 id="precisoDe" class="p2resultado__inner"></h2>
+                    <h2 id="lata18l" class="p2resultado__inner"></h2>
+                    <h2 id="lata36l" class="p2resultado__inner"></h2>
+                    <h2 id="lata25l" class="p2resultado__inner"></h2>
+                    <h2 id="lata05l" class="p2resultado__inner"></h2>
+                    <h2 id="lata0l" class="p2resultado__inner"></h2>
+                    <h2 id="latas" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoArea" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ" class="p2resultado__inner"></h2>
+                    <h2 id="erroP" class="p2resultado__inner"></h2>
+                    <h2 id="erroJ" class="p2resultado__inner"></h2>
+                    <h2 id="erroPeJ" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoP" class="p2resultado__inner"></h2>
+                    <h2 id="erroAvisoJ" class="p2resultado__inner"></h2>
+                </div>
+            </div>
+
+            <div class="parede__entrada">
+                <label for="comprimento3" class="p3entrada__label">Comprimento da 3ª parede em metros</label>
+                <input type="number" class="p3entrada__input" id="comprimento" name="comprimento3" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="altura3" class="p3entrada__label">Altura da 3ª parede em metros</label>
+                <input type="number" class="p3entrada__input" id="altura" name="altura3" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p3portas" class="p3entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p3entrada__input" id="portas" name="portas3" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p3janelas" class="p3entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p3entrada__input" id="janelas" name="janelas3" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede3__resultado">
+                    <h2 id="compInput" class="p3resultado__inner"></h2>
+                    <h2 id="alturaInput" class="p3resultado__inner"></h2>
+                    <h2 id="m2paredeResultado" class="p3resultado__inner"></h2>
+                    <h2 id="precisoDe" class="p3resultado__inner"></h2>
+                    <h2 id="lata18l" class="p3resultado__inner"></h2>
+                    <h2 id="lata36l" class="p3resultado__inner"></h2>
+                    <h2 id="lata25l" class="p3resultado__inner"></h2>
+                    <h2 id="lata05l" class="p3resultado__inner"></h2>
+                    <h2 id="lata0l" class="p3resultado__inner"></h2>
+                    <h2 id="latas" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoArea" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ" class="p3resultado__inner"></h2>
+                    <h2 id="erroP" class="p3resultado__inner"></h2>
+                    <h2 id="erroJ" class="p3resultado__inner"></h2>
+                    <h2 id="erroPeJ" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoP" class="p3resultado__inner"></h2>
+                    <h2 id="erroAvisoJ" class="p3resultado__inner"></h2>
+                </div>
+            </div>
+
+            <div class="parede__entrada">
+                <label for="comprimento4" class="p4entrada__label">Comprimento da 4ª parede em metros</label>
+                <input type="number" class="p4entrada__input" id="comprimento" name="comprimento4" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="altura4" class="p4entrada__label">Altura da 4ª parede em metros</label>
+                <input type="number" class="p4entrada__input" id="altura" name="altura4" value="" placeholder="Digite 1 ou mais ou 0 para nenhuma" required>
+
+                <label for="p4portas" class="p4entrada__label">Quantas Portas?</label>
+                <span><p>A porta tem metragem padrão de 0,80m x 1,90m, área de 1,52m²</p></span>
+                <input type="number" class="p4entrada__input" id="portas" name="portas4" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <label for="p4janelas" class="p4entrada__label">Quantas Janelas?</label>
+                <span><p>A janela tem metragem padrão de 2,00m x 1,20m, área de 2,40m²</p></span>
+                <input type="number" class="p4entrada__input" id="janelas" name="janelas4" value="0" placeholder="Digite 1 ou mais ou 0 para nenhuma">
+
+                <div class="parede4__resultado">
+                    <h2 id="compInput" class="p4resultado__inner"></h2>
+                    <h2 id="alturaInput" class="p4resultado__inner"></h2>
+                    <h2 id="m2paredeResultado" class="p4resultado__inner"></h2>
+                    <h2 id="precisoDe" class="p4resultado__inner"></h2>
+                    <h2 id="lata18l" class="p4resultado__inner"></h2>
+                    <h2 id="lata36l" class="p4resultado__inner"></h2>
+                    <h2 id="lata25l" class="p4resultado__inner"></h2>
+                    <h2 id="lata05l" class="p4resultado__inner"></h2>
+                    <h2 id="lata0l" class="p4resultado__inner"></h2>
+                    <h2 id="latas" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoArea" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaPJ" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoAreaSomaPJ" class="p4resultado__inner"></h2>
+                    <h2 id="erroP" class="p4resultado__inner"></h2>
+                    <h2 id="erroJ" class="p4resultado__inner"></h2>
+                    <h2 id="erroPeJ" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoP" class="p4resultado__inner"></h2>
+                    <h2 id="erroAvisoJ" class="p4resultado__inner"></h2>
+                </div>
+            </div>
+
+            <div class="totais__resultado">
+                <h2 class="totais__inner">TOTAL</h2>
+				<h2 id="total" class="total__inner"></h2>
+                <h2 id="lata18lt" class="total__inner"></h2>
+                <h2 id="lata36lt" class="total__inner"></h2>
+                <h2 id="lata25lt" class="total__inner"></h2>
+                <h2 id="lata05lt" class="total__inner"></h2>
+                <h2 id="lata0lt" class="total__inner"></h2>
+                <h2 id="latast" class="total__inner"></h2>
+			</div>
+                
+            <input type="submit" class="parede__botao" onclick="calcula()" value="Calcular" id="calcule">
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape__caixa">
+            <h3 class="rodape__texto">&#169 Tintas Pinta - 2022 </h3>
+        </div>
+        <div class="rodape__caixa">
+           <a href="#"><img class="rodape__icones" src="img/icons8-facebook-novo.svg" alt=""></a>
+           <a href="#"><img class="rodape__icones" src="img/icons8-instagram.svg" alt=""></a>
+           <a href="#"><img class="rodape__icones" src="img/icons8-reproduzir-youtube.svg" alt=""></a>
+        </div>
+    </footer>
+
+<script src="script/calculadora.js"></script>
+</body>
+</html>
