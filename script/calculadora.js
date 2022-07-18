@@ -193,7 +193,7 @@ function calcula() {
 
             comprimentoAlturaPortasJanelas(portas, janelas)
         
-            if (comprimento >= (comprimentoDaPorta + comprimentoDaJanela) && altura >= (alturaDaPorta + 0.30) && altura >= alturaDaJanela) {
+            if (comprimento >= comprimentoDaPorta && comprimento >= comprimentoDaJanela && altura >= (alturaDaPorta + 0.30) && altura >= alturaDaJanela) {
 
                 var precisoDe = parede.querySelector("#precisoDe"); 
                 precisoDe.textContent = "São necessários " + quantosLitros + " litros de tinta " + "Para pintar " + m2ParedeMenosPeJ + "m² da parede";
@@ -241,9 +241,9 @@ function calcula() {
                 erroAvisoArea = parede.querySelector("#erroAvisoArea");
                 erroAvisoArea.textContent = "O comprimento da parede não pode ser menor que o comprimento da(s) porta(s) e/ou janela(s)";
                 erroP = parede.querySelector("#erroP");
-                erroP.textContent = "O comprimento da(s) porta(s) foi: " + comprimentoDaPorta + "m";
+                erroP.textContent = "O comprimento da(s) porta(s) foi: " + (comprimentoDaPorta).toFixed(2) + "m";
                 erroJ = parede.querySelector("#erroJ");
-                erroJ.textContent = "O comprimento da(s) janela(s) foi: " + comprimentoDaJanela + "m";
+                erroJ.textContent = "O comprimento da(s) janela(s) foi: " + (comprimentoDaJanela).toFixed(2) + "m";
                 erroPeJ = parede.querySelector("#erroPeJ");
                 erroPeJ.textContent = "A soma dos comprimentos foi: " + (comprimentoDaPorta + comprimentoDaJanela).toFixed(2) + "m";
 
